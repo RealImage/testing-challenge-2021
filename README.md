@@ -3,8 +3,7 @@
 In this coding challenge, you need to write test cases and automate the same using the APIs of a Web Application called “ShareBox”.
 
 #### Notes: 
-* API Documentation: https://qubesharebox.docs.apiary.io
-* Refer (https://github.com/RealImage/testing-challenge-2019#scenarios-to-automate-api-documentation-httpsqubeshareboxdocsapiaryio) for the scenarios to automate
+* For scenarios to automate, refer: https://github.com/RealImage/testing-challenge-2019#scenarios-to-automate-api-documentation-httpsqubeshareboxdocsapiaryio
 * You can choose any programming language preferable to you. 
 * You have to fork the Github repository and raise a pull request to the original repository once you completed the coding part with testcases 
 
