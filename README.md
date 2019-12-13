@@ -21,7 +21,7 @@ In this coding challenge, you need to write test cases and automate the same usi
 * Create another account (same as Prerequisite)  and share files from one account to another account 
 * Approve/Reject the shared file from the receiver account 
 
-**Note:** Add a necessary validation for all the scenarios.
+   **Note:** Add a necessary validation for all the scenarios.
 
 
 #### API Sample:
@@ -31,5 +31,3 @@ In this coding challenge, you need to write test cases and automate the same usi
 ```
 curl -X GET “https://ec2-13-232-224-131.ap-south-1.compute.amazonaws.com/sharebox/api/files?getSharedFiles=test&token=<token_generated>” -H “accept: application/json”
 ```
-
-
