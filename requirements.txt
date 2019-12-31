@@ -1,0 +1,4 @@
+filehash==0.1.dev3
+objectifier==1.4.0
+requests==2.19.1
+pytest==4.1.1

@@ -1,0 +1,1 @@
+{"SHAREBOX_URL": "https://ec2-13-232-224-131.ap-south-1.compute.amazonaws.com/sharebox/api", "token": "54278b5c-19bf-4e24-a237-403c41590798", "TEST_DATA": {"test_one": {}, "test_four": {"file_to_upload": "file2.json"}, "test_six": {"file_to_upload": "file4.json"}, "test_three": {"file_to_upload": "file1.json"}, "test_five": {"file_to_upload": "file3.json"}, "test_two": {}}}

@@ -1,0 +1,5 @@
+# make sure the dependencies are installed by using
+python -m pip install -r requirements.txt
+
+# To run the test , simply type the following from the root folder
+pytest test_file_curd.py -v
