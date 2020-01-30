@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ShareBox Test suite">
+
+	<test name="ShareBox Test" preserve-order="true">
+		<classes>
+			<class name="com.sharebox.api.tests.APITests"></class>
+
+		</classes>
+
+	</test>
+
+</suite>
