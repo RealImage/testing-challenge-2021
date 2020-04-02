@@ -8,7 +8,7 @@ In this coding challenge, you need to write test cases and automate the same usi
 * You have to fork the Github repository and raise a pull request to the original repository once you completed the coding part with testcases 
 
 #### Prerequisites
-* Signup in ShareBox using web URL: https://ec2-13-232-224-131.ap-south-1.compute.amazonaws.com/sharebox
+* Signup in ShareBox using web URL: https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox
 * Generate Token using the option available in the ShareBox Website
 * Save the token for automating the APIs of ShareBox 
 
@@ -24,9 +24,9 @@ In this coding challenge, you need to write test cases and automate the same usi
 
 
 #### API Sample:
-##### Host API URL: https://ec2-13-232-224-131.ap-south-1.compute.amazonaws.com/sharebox/api
+##### Host API URL: https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api
 ##### Scenario: To get a list of files in your account (use the token which you got from the prerequisite)
 ##### cURL command: 
 ```
-curl -X GET “https://ec2-13-232-224-131.ap-south-1.compute.amazonaws.com/sharebox/api/files?getSharedFiles=test&token=<token_generated>” -H “accept: application/json”
+curl -X GET “https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?getSharedFiles=test&token=<token_generated>” -H “accept: application/json”
 ```
