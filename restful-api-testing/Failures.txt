@@ -1,0 +1,22 @@
+Failures:
+========
+
+1. POST request :https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files
+Response :<html><body><h1>Internal error</h1>Ticket issued: <a href="/admin/default/ticket/sharebox/27.5.68.32.2020-04-03.13-38-24.1224c9f6-4759-490a-aeb6-887cb02c810a" target="_blank">sharebox/27.5.68.32.2020-04-03.13-38-24.1224c9f6-4759-490a-aeb6-887cb02c810a</a></body><!-- this is junk text else IE does not display the page: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx //--></html>
+Status Code :500
+
+
+
+java.lang.AssertionError: 
+Expected :200
+Actual   :500
+
+Reason: This looks like an endpoint failure
+
+2. PUT request :https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files
+
+
+
+java.lang.IllegalArgumentException: MIME type may not contain reserved characters
+
+Reason: Looks like the content-type mentioned in the swagger is incorrect
