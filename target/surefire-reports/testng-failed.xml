@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [APIComplete]">
+  <test thread-count="5" verbose="0" name="APIAutomation(failed)">
+    <classes>
+      <class name="tests.TestRun">
+        <methods>
+          <include name="initialSetup"/>
+          <include name="testSetup"/>
+          <include name="scenarioteardown"/>
+          <include name="sampleTest"/>
+          <include name="tearDown"/>
+          <include name="scenarioSetup"/>
+          <include name="testteardown"/>
+        </methods>
+      </class> <!-- tests.TestRun -->
+    </classes>
+  </test> <!-- APIAutomation(failed) -->
+</suite> <!-- Failed suite [APIComplete] -->

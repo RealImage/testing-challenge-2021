@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="APIComplete" duration-ms="25039" started-at="2020-04-08T13:14:36Z" finished-at="2020-04-08T13:15:02Z">
+    <groups>
+    </groups>
+    <test name="APIAutomation" duration-ms="25039" started-at="2020-04-08T13:14:36Z" finished-at="2020-04-08T13:15:02Z">
+      <class name="tests.UploadE2E">
+        <test-method status="PASS" signature="initialSetup()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="initialSetup" is-config="true" duration-ms="9" started-at="2020-04-08T13:14:36Z" finished-at="2020-04-08T13:14:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetup -->
+        <test-method status="PASS" signature="scenarioSetup()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="scenarioSetup" is-config="true" duration-ms="15149" started-at="2020-04-08T13:14:36Z" finished-at="2020-04-08T13:14:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioSetup -->
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-08T13:14:52Z" finished-at="2020-04-08T13:14:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetup -->
+        <test-method status="PASS" signature="uploadFiletillComplete()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="uploadFiletillComplete" duration-ms="6125" started-at="2020-04-08T13:14:52Z" finished-at="2020-04-08T13:14:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadFiletillComplete -->
+        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-08T13:14:58Z" finished-at="2020-04-08T13:14:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testteardown -->
+        <test-method status="PASS" signature="scenarioteardown()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="scenarioteardown" is-config="true" duration-ms="3751" started-at="2020-04-08T13:14:58Z" finished-at="2020-04-08T13:15:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioteardown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.UploadE2E@2f686d1f]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-04-08T13:15:02Z" finished-at="2020-04-08T13:15:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.UploadE2E -->
+    </test> <!-- APIAutomation -->
+  </suite> <!-- APIComplete -->
+</testng-results>

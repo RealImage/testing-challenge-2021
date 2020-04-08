@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="APIComplete" verbose="1">
+	<test name="APIAutomation">
+		<classes>
+			<class name="tests.UploadE2E" />
+		</classes>
+	</test>
+</suite>
