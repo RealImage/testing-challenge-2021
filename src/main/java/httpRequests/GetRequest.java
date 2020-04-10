@@ -65,15 +65,24 @@ public class GetRequest {
 	
 	public boolean assertFirstGet(HashMap<String, String> validation){
 		boolean testPass = true;
-		 if(!validation.get("bytesCompleted").equals("0")){
-	        	testPass = false;
+		
+		if(!validation.get("bytesCompleted").equals("0")){
+	        if(!validation.get("fileSize").equals("0"))	
+			testPass = false;
 	        	//report
-	        }
+	    }
 	        
-	      if(!validation.get("status").equals("Pending")){
-	        	testPass = false;
-	        	//report
-	        }
+	    if(validation.get("status").equals("Pending")){
+	    	if(Integer.parseInt(validation.get("fileSize"))==0){
+	    		testPass = false;
+	    	}
+	    }else if(!validation.get("status").equals("Pending")){
+	    	if(!validation.get("fileSize").equals("0"))	
+				testPass = false;
+        	//report
+	    }
+	    
+	    
 	        
 	    //to check file name hash can be included
 		

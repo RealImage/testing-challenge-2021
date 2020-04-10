@@ -16,18 +16,19 @@ import org.testng.annotations.BeforeSuite;
 public class TestBase {
 	//framework wise
 	public WebDriver driver;
-	public Properties property;
-	public String projectPath;
-	public CommonMethods method;
+	public static Properties property ;
+	public static String projectPath = System.getProperty("user.dir");
+	public static CommonMethods method;
 	
 	//test suite wise
-	public String baseURI;
-	public String primarySessionID;
-	public String secondarySessionID;
+	public static String baseURI;
+	public static String primarySessionID;
+	public static String secondarySessionID;
+	
 	
 	@BeforeSuite
 	public void initialSetup() throws IOException{
-		projectPath = System.getProperty("user.dir");
+		
 		FileInputStream fileInput = new FileInputStream(projectPath 
 				+ "\\src\\test\\resources\\config.properties");
 		property = new Properties();

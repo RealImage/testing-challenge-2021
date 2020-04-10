@@ -15,19 +15,25 @@ import httpRequests.PutRequest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utilities.CommonScenarios;
+import utilities.Reports;
+import utilities.Reports.results;
 
-public class UploadE2E extends CommonScenarios{
+public class E2EUpload extends CommonScenarios{
 	
-	public enum resources{
-		files,upload
-	}
+	
 	
 	//upload file happy scenario
 	@Test
 	public void uploadFiletillComplete() throws Exception{
 		String testCase = "File upload happy path";
-		boolean testPass = true;
+		Reports report = new Reports();
+		try{
 		
+		boolean testPass = true;
+		report.openReport(testCase);
+		Response postResponse;
+		Response getResponse;
+		Response putResponse;
 		//things to validate in test
 		HashMap<String, String> validation = 
 				new HashMap<String, String>(); 
@@ -39,7 +45,6 @@ public class UploadE2E extends CommonScenarios{
 		
 		
 		//essentials
-		JsonPath path;
 		File file = new File(projectPath 
 				+ property.getProperty("testDataSheet"));
 		LinkedHashMap<String, String> map = 
@@ -47,25 +52,22 @@ public class UploadE2E extends CommonScenarios{
 		PostRequest post = new PostRequest(baseURI, primarySessionID);
 		GetRequest get = new GetRequest(baseURI, primarySessionID);
 		PutRequest put = new PutRequest(baseURI, primarySessionID);
-		DeleteRequest delete = new DeleteRequest(baseURI, primarySessionID);
 		map = method.returnDataFromExcel(file
 				, property.getProperty("uploadPost"), testCase);
 		if(map.isEmpty()){
-			addStep(testCase, "Info: Test Data not available", results.SKIPPED.toString());
+			report.addStep(inBold("Info:") +" Test Data not available", results.SKIPPED.toString());
 			throw new SkipException("Test Data not available");
 		}
+		map = method.optimiseData(map);
 		validation.put("fileSize", map.get("size")) ;
-		Response postResponse;
-		Response getResponse;
-		Response putResponse;
-		Response deleteResponse;
+		
 		
 		//1st post request
 		postResponse = post.makePostRequest(map
 				, resources.upload.toString());
 		validation = post.validateStatusRetrieveDataPostRequest(postResponse
 				, validation);
-		addStep(testCase, "POST RESUEST: " + postResponse.asString(), results.PASSED.toString());
+		report.addStep(inBold("POST RESUEST to upload file: ") + postResponse.asString(), results.PASSED.toString());
         
 		//1st get request
 		getResponse = get.makeGetRequest(validation.get("fileID")
@@ -74,9 +76,9 @@ public class UploadE2E extends CommonScenarios{
         		, validation);
         testPass = get.assertFirstGet(validation);
         if(testPass){
-        	addStep(testCase, "GET RESUEST: " + getResponse.asString(), results.PASSED.toString());
+        	report.addStep(inBold("GET RESUEST after post: ") + getResponse.asString(), results.PASSED.toString());
         }else{
-        	addStep(testCase, "GET RESUEST: " + getResponse.asString(), results.FAILED.toString());
+        	report.addStep(inBold("GET RESUEST after post: ") + getResponse.asString(), results.FAILED.toString());
         }
         testPass = true;
         //put request to upload complete file
@@ -84,7 +86,7 @@ public class UploadE2E extends CommonScenarios{
         		, resources.upload.toString()
         		, validation.get("fileSize"));
         put.assertStatusPutRequest(putResponse);
-        
+        report.addStep(inBold("PUT RESUEST to upload file completely: ") + putResponse.asString(), results.PASSED.toString());
         
         //get request after complete file upload
         getResponse = get.makeGetRequest(validation.get("fileID")
@@ -95,10 +97,16 @@ public class UploadE2E extends CommonScenarios{
         
         testPass = get.assertGetAfterPut(validation,validation.get("fileSize"), "Completed" );
         if(testPass){
-        	addStep(testCase, "GET RESUEST: " + getResponse.asString(), results.PASSED.toString());
+        	report.addStep(inBold("GET RESUEST to validate successful file upload: ") + getResponse.asString(), results.PASSED.toString());
         }else{
-        	addStep(testCase, "GET RESUEST: " + getResponse.asString(), results.FAILED.toString());
+        	report.addStep(inBold("GET RESUEST to validate successful file upload: ") + getResponse.asString(), results.FAILED.toString());
         }
+		}catch(Exception e){
+			report.addStep(inBold("TESTCASE FAILED: ") + e, results.FAILED.toString());
+		}finally{
+			report.closeReport();
+			addMainStep(testCase);
+		}
 	}
 	
 }

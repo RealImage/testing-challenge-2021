@@ -15,6 +15,10 @@ public class CommonScenarios extends Reports{
 	public LoginPage login;
 	public HomePage home;
 	public TokenPage token;
+	public Reports report;
+	public enum resources{
+		files,upload
+	}
 	
 	public String getUserSessionID(String email, String password){
 		login = new LoginPage(driver, method);
@@ -24,17 +28,16 @@ public class CommonScenarios extends Reports{
 		token = new TokenPage(driver, method);
 		return token.getToken();
 	}
+
 	
 	@BeforeTest
 	public void scenarioSetup() throws IOException{
 		//get session primary user ID
 		initDriver();
 		driver.get(property.getProperty("loginURL"));
-		
 		primarySessionID = getUserSessionID(property.getProperty("primUserId")
 				, property.getProperty("primPassword"));
-		
-		openReport();
+		openMainReport();
 	}
 
 	@BeforeMethod
@@ -44,14 +47,18 @@ public class CommonScenarios extends Reports{
 	
 	@AfterTest
 	public void scenarioteardown() throws IOException{
-		closeReport();
+		closeMainReport();
+		try{
 		home.logout();
+		}catch(Exception e){
+			//do nothing
+		}
 		driver.quit();
 		Runtime.getRuntime().exec("taskkill /im chromedriver.exe /f");
 	}
 	
 	@AfterMethod
-	public void testteardown(){
+	public void testteardown() throws IOException{
 		
 	}
 	

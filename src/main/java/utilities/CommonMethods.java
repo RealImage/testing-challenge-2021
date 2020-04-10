@@ -5,6 +5,8 @@ package utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -52,6 +54,18 @@ public class CommonMethods {
 				}
 			}
 		}
+		
+		return map;
+	}
+	
+	public LinkedHashMap<String,String> optimiseData(LinkedHashMap<String,String> map){
+		
+		String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss")
+				.format(new Timestamp(System.currentTimeMillis()));
+		
+		map.put("name", map.get("name") + timeStamp);
+		map.put("hash", map.get("name"));
+		map.put("file", map.get("name")+ ".pdf");
 		
 		return map;
 	}

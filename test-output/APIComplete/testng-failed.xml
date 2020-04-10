@@ -3,17 +3,31 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [APIComplete]">
   <test thread-count="5" name="APIAutomation(failed)">
     <classes>
-      <class name="tests.UploadE2E">
+      <class name="tests.FunctionalUploadToken">
         <methods>
+          <include name="uploadInvalidTokenGet"/>
+          <include name="initialSetup"/>
+          <include name="testSetup"/>
+          <include name="scenarioteardown"/>
+          <include name="tearDown"/>
+          <include name="scenarioSetup"/>
+          <include name="uploadInvalidTokenPut"/>
+          <include name="uploadInvalidTokenPost"/>
+          <include name="testteardown"/>
+        </methods>
+      </class> <!-- tests.FunctionalUploadToken -->
+      <class name="tests.FunctionalUploadFile">
+        <methods>
+          <include name="uploadFileSizeZero"/>
           <include name="initialSetup"/>
           <include name="testSetup"/>
           <include name="scenarioteardown"/>
           <include name="tearDown"/>
           <include name="scenarioSetup"/>
           <include name="testteardown"/>
-          <include name="uploadFiletillCompleteandDelete"/>
+          <include name="reduceBytesAfterComplete"/>
         </methods>
-      </class> <!-- tests.UploadE2E -->
+      </class> <!-- tests.FunctionalUploadFile -->
     </classes>
   </test> <!-- APIAutomation(failed) -->
 </suite> <!-- Failed suite [APIComplete] -->

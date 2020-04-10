@@ -2,7 +2,9 @@
 <suite name="APIComplete" verbose="1">
 	<test name="APIAutomation">
 		<classes>
-			<class name="tests.UploadE2E" />
+			<class name="tests.E2EUpload" />
+			<class name="tests.FunctionalUploadFile" />
+			<class name="tests.FunctionalUploadToken" />
 		</classes>
 	</test>
 </suite>
