@@ -1,8 +1,0 @@
-utilities\Reports$results.class
-utilities\CommonScenarios.class
-pages\LoginPage.class
-pages\HomePage.class
-pages\TokenPage.class
-utilities\CommonMethods.class
-utilities\TestBase.class
-utilities\Reports.class

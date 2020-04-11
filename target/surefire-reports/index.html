@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-APIComplete">
-                    <span>C:\Eclipse\Proframming\Qube Cinemas Assignment\testing-challenge-2019\testng.xml</span>
+                    <span>C:\Eclipse\Proframming\Qube Cinemas Assignment\testing-challenge-2019\testNg.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,22 @@
                     <div class="method-list-content passed suite-APIComplete">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-APIComplete" title="tests.UploadE2E" hash-for-method="uploadFiletillComplete">uploadFiletillComplete</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-APIComplete" title="testCases.FilesShareScenario" hash-for-method="approveShare">approveShare</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-APIComplete" title="testCases.DeleteScenario" hash-for-method="deleteFile">deleteFile</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-APIComplete" title="testCases.FilesShareScenario" hash-for-method="rejectShare">rejectShare</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-APIComplete" title="testCases.UploadFileScenario" hash-for-method="uploadFile">uploadFile</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-APIComplete -->
@@ -120,14 +135,51 @@
           <div class="suite-APIComplete-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.UploadE2E</span>
+              <span class="class-name">testCases.UploadFileScenario</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="uploadFiletillComplete">
-                  </a> <!-- uploadFiletillComplete -->
-                  <span class="method-name">uploadFiletillComplete</span>
+                  <a name="uploadFile">
+                  </a> <!-- uploadFile -->
+                  <span class="method-name">uploadFile</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-APIComplete-class-passed -->
+          <div class="suite-APIComplete-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.FilesShareScenario</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="approveShare">
+                  </a> <!-- approveShare -->
+                  <span class="method-name">approveShare</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="rejectShare">
+                  </a> <!-- rejectShare -->
+                  <span class="method-name">rejectShare</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-APIComplete-class-passed -->
+          <div class="suite-APIComplete-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.DeleteScenario</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteFile">
+                  </a> <!-- deleteFile -->
+                  <span class="method-name">deleteFile</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +187,7 @@
         </div> <!-- panel APIComplete -->
         <div panel-name="test-xml-APIComplete" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Eclipse\Proframming\Qube Cinemas Assignment\testing-challenge-2019\testng.xml</span>
+            <span class="header-content">C:\Eclipse\Proframming\Qube Cinemas Assignment\testing-challenge-2019\testNg.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +196,9 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;APIComplete&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;APIAutomation&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.UploadE2E&quot;/&gt;
+      &lt;class name=&quot;testCases.UploadFileScenario&quot;/&gt;
+      &lt;class name=&quot;testCases.FilesShareScenario&quot;/&gt;
+      &lt;class name=&quot;testCases.DeleteScenario&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- APIAutomation --&gt;
 &lt;/suite&gt; &lt;!-- APIComplete --&gt;
@@ -158,7 +212,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">APIAutomation (1 class)</span>
+                <span class="test-name">APIAutomation (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +238,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'uploadFiletillComplete')
-data.setCell(0, 2, 'tests.UploadE2E')
-data.setCell(0, 3, 4364);
+data.setCell(0, 1, 'approveShare')
+data.setCell(0, 2, 'testCases.FilesShareScenario')
+data.setCell(0, 3, 11415);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'deleteFile')
+data.setCell(1, 2, 'testCases.DeleteScenario')
+data.setCell(1, 3, 9955);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'uploadFile')
+data.setCell(2, 2, 'testCases.UploadFileScenario')
+data.setCell(2, 3, 9919);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'rejectShare')
+data.setCell(3, 2, 'testCases.FilesShareScenario')
+data.setCell(3, 3, 8718);
 window.suiteTableData['APIComplete']= { tableData: data, tableDiv: 'times-div-APIComplete'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 40 seconds</span>
               <div id="times-div-APIComplete">
               </div> <!-- times-div-APIComplete -->
             </div> <!-- times-div -->
@@ -208,9 +274,35 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-APIComplete" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.FilesShareScenario</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">scenarioTeardown</span>
+                <br/>
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">initEssentials</span>
+                <br/>
+                <span class="ignored-method-name">scenarioSetup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.DeleteScenario</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">scenarioTeardown</span>
+                <br/>
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">initEssentials</span>
+                <br/>
+                <span class="ignored-method-name">scenarioSetup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-APIComplete" class="panel">
@@ -219,34 +311,79 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.UploadE2E</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.UploadFileScenario</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">initialSetup</span>
+                <span class="method-name">initEssentials</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">scenarioSetup</span>
-                <span class="method-start">9 ms</span>
+                <span class="method-start">11 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">testSetup</span>
-                <span class="method-start">14541 ms</span>
+                <span class="method-start">32917 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">uploadFiletillComplete</span>
-                <span class="method-start">14541 ms</span>
+                <span class="method-name">uploadFile</span>
+                <span class="method-start">32917 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">testteardown</span>
-                <span class="method-start">18907 ms</span>
+                <span class="method-name">testTeardown</span>
+                <span class="method-start">42837 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.FilesShareScenario</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">testSetup</span>
+                <span class="method-start">42838 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">approveShare</span>
+                <span class="method-start">42838 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testTeardown</span>
+                <span class="method-start">54253 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">testSetup</span>
+                <span class="method-start">54253 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">rejectShare</span>
+                <span class="method-start">54253 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testTeardown</span>
+                <span class="method-start">62972 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.DeleteScenario</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">testSetup</span>
+                <span class="method-start">62972 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">deleteFile</span>
+                <span class="method-start">62972 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testTeardown</span>
+                <span class="method-start">72927 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.UploadFileScenario</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
-                <span class="method-name">scenarioteardown</span>
-                <span class="method-start">18908 ms</span>
+                <span class="method-name">scenarioTeardown</span>
+                <span class="method-start">72927 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">20189 ms</span>
+                <span class="method-start">72956 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

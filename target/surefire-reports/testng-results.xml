@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="8" total="12" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="APIComplete" duration-ms="20157" started-at="2020-04-08T13:22:33Z" finished-at="2020-04-08T13:22:53Z">
+  <suite name="APIComplete" duration-ms="72916" started-at="2020-04-11T20:13:01Z" finished-at="2020-04-11T20:14:14Z">
     <groups>
     </groups>
-    <test name="APIAutomation" duration-ms="20157" started-at="2020-04-08T13:22:33Z" finished-at="2020-04-08T13:22:53Z">
-      <class name="tests.UploadE2E">
-        <test-method status="PASS" signature="initialSetup()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="initialSetup" is-config="true" duration-ms="9" started-at="2020-04-08T13:22:33Z" finished-at="2020-04-08T13:22:33Z">
+    <test name="APIAutomation" duration-ms="72916" started-at="2020-04-11T20:13:01Z" finished-at="2020-04-11T20:14:14Z">
+      <class name="testCases.FilesShareScenario">
+        <test-method status="PASS" signature="approveShare()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="approveShare" duration-ms="11415" started-at="2020-04-11T20:13:44Z" finished-at="2020-04-11T20:13:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialSetup -->
-        <test-method status="PASS" signature="scenarioSetup()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="scenarioSetup" is-config="true" duration-ms="14522" started-at="2020-04-08T13:22:33Z" finished-at="2020-04-08T13:22:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scenarioSetup -->
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-08T13:22:47Z" finished-at="2020-04-08T13:22:47Z">
+        </test-method> <!-- approveShare -->
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-11T20:13:44Z" finished-at="2020-04-11T20:13:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="uploadFiletillComplete()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="uploadFiletillComplete" duration-ms="4364" started-at="2020-04-08T13:22:47Z" finished-at="2020-04-08T13:22:51Z">
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-11T20:13:55Z" finished-at="2020-04-11T20:13:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploadFiletillComplete -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-08T13:22:51Z" finished-at="2020-04-08T13:22:51Z">
+        </test-method> <!-- testSetup -->
+        <test-method status="PASS" signature="rejectShare()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="rejectShare" duration-ms="8718" started-at="2020-04-11T20:13:55Z" finished-at="2020-04-11T20:14:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testteardown -->
-        <test-method status="PASS" signature="scenarioteardown()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="scenarioteardown" is-config="true" duration-ms="1258" started-at="2020-04-08T13:22:51Z" finished-at="2020-04-08T13:22:53Z">
+        </test-method> <!-- rejectShare -->
+        <test-method status="PASS" signature="testTeardown()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="testTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:13:55Z" finished-at="2020-04-11T20:13:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scenarioteardown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.UploadE2E@7c0e2abd]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-04-08T13:22:53Z" finished-at="2020-04-08T13:22:53Z">
+        </test-method> <!-- testTeardown -->
+        <test-method status="PASS" signature="testTeardown()[pri:0, instance:testCases.FilesShareScenario@23ceabc1]" name="testTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:14:04Z" finished-at="2020-04-11T20:14:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTeardown -->
+      </class> <!-- testCases.FilesShareScenario -->
+      <class name="testCases.DeleteScenario">
+        <test-method status="PASS" signature="deleteFile()[pri:0, instance:testCases.DeleteScenario@5d5eef3d]" name="deleteFile" duration-ms="9955" started-at="2020-04-11T20:14:04Z" finished-at="2020-04-11T20:14:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteFile -->
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:testCases.DeleteScenario@5d5eef3d]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-11T20:14:04Z" finished-at="2020-04-11T20:14:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetup -->
+        <test-method status="PASS" signature="testTeardown()[pri:0, instance:testCases.DeleteScenario@5d5eef3d]" name="testTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:14:14Z" finished-at="2020-04-11T20:14:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTeardown -->
+      </class> <!-- testCases.DeleteScenario -->
+      <class name="testCases.UploadFileScenario">
+        <test-method status="PASS" signature="initEssentials()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="initEssentials" is-config="true" duration-ms="10" started-at="2020-04-11T20:13:01Z" finished-at="2020-04-11T20:13:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initEssentials -->
+        <test-method status="PASS" signature="scenarioSetup()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="scenarioSetup" is-config="true" duration-ms="32895" started-at="2020-04-11T20:13:01Z" finished-at="2020-04-11T20:13:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioSetup -->
+        <test-method status="PASS" signature="uploadFile()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="uploadFile" duration-ms="9919" started-at="2020-04-11T20:13:34Z" finished-at="2020-04-11T20:13:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uploadFile -->
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-11T20:13:34Z" finished-at="2020-04-11T20:13:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetup -->
+        <test-method status="PASS" signature="testTeardown()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="testTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:13:44Z" finished-at="2020-04-11T20:13:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTeardown -->
+        <test-method status="PASS" signature="scenarioTeardown()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="scenarioTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:14:14Z" finished-at="2020-04-11T20:14:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenarioTeardown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.UploadFileScenario@5dfcfece]" name="tearDown" is-config="true" duration-ms="1168" started-at="2020-04-11T20:14:14Z" finished-at="2020-04-11T20:14:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.UploadE2E -->
+      </class> <!-- testCases.UploadFileScenario -->
     </test> <!-- APIAutomation -->
   </suite> <!-- APIComplete -->
 </testng-results>

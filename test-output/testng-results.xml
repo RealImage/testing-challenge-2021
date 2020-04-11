@@ -1,105 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="8" total="14" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="APIComplete" duration-ms="23005" started-at="2020-04-10T15:00:38Z" finished-at="2020-04-10T15:01:01Z">
+  <suite name="APIComplete" duration-ms="31732" started-at="2020-04-11T19:59:41Z" finished-at="2020-04-11T20:00:12Z">
     <groups>
     </groups>
-    <test name="APIAutomation" duration-ms="23005" started-at="2020-04-10T15:00:38Z" finished-at="2020-04-10T15:01:01Z">
-      <class name="tests.E2EUpload">
-        <test-method status="PASS" signature="initialSetup()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="initialSetup" is-config="true" duration-ms="12" started-at="2020-04-10T15:00:38Z" finished-at="2020-04-10T15:00:38Z">
+    <test name="APIAutomation" duration-ms="31732" started-at="2020-04-11T19:59:41Z" finished-at="2020-04-11T20:00:12Z">
+      <class name="testCases.DeleteScenario">
+        <test-method status="PASS" signature="initEssentials()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="initEssentials" is-config="true" duration-ms="10" started-at="2020-04-11T19:59:41Z" finished-at="2020-04-11T19:59:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialSetup -->
-        <test-method status="PASS" signature="scenarioSetup()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="scenarioSetup" is-config="true" duration-ms="11587" started-at="2020-04-10T15:00:38Z" finished-at="2020-04-10T15:00:50Z">
+        </test-method> <!-- initEssentials -->
+        <test-method status="PASS" signature="scenarioSetup()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="scenarioSetup" is-config="true" duration-ms="26464" started-at="2020-04-11T19:59:41Z" finished-at="2020-04-11T20:00:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenarioSetup -->
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:50Z" finished-at="2020-04-10T15:00:50Z">
+        <test-method status="PASS" signature="testSetup()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="testSetup" is-config="true" duration-ms="1" started-at="2020-04-11T20:00:07Z" finished-at="2020-04-11T20:00:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="uploadFiletillComplete()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="uploadFiletillComplete" duration-ms="3764" started-at="2020-04-10T15:00:50Z" finished-at="2020-04-10T15:00:54Z">
+        <test-method status="PASS" signature="deleteFile()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="deleteFile" duration-ms="5253" started-at="2020-04-11T20:00:07Z" finished-at="2020-04-11T20:00:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uploadFiletillComplete -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:54Z" finished-at="2020-04-10T15:00:54Z">
+        </test-method> <!-- deleteFile -->
+        <test-method status="PASS" signature="testTeardown()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="testTeardown" is-config="true" duration-ms="1" started-at="2020-04-11T20:00:12Z" finished-at="2020-04-11T20:00:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testteardown -->
-        <test-method status="PASS" signature="scenarioteardown()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="scenarioteardown" is-config="true" duration-ms="1129" started-at="2020-04-10T15:01:00Z" finished-at="2020-04-10T15:01:01Z">
+        </test-method> <!-- testTeardown -->
+        <test-method status="PASS" signature="scenarioTeardown()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="scenarioTeardown" is-config="true" duration-ms="0" started-at="2020-04-11T20:00:12Z" finished-at="2020-04-11T20:00:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- scenarioteardown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.E2EUpload@73ad2d6]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-04-10T15:01:01Z" finished-at="2020-04-10T15:01:01Z">
+        </test-method> <!-- scenarioTeardown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.DeleteScenario@490ab905]" name="tearDown" is-config="true" duration-ms="1185" started-at="2020-04-11T20:00:12Z" finished-at="2020-04-11T20:00:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.E2EUpload -->
-      <class name="tests.FunctionalUploadFile">
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:54Z" finished-at="2020-04-10T15:00:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="reduceBytesAfterComplete()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="reduceBytesAfterComplete" duration-ms="2125" started-at="2020-04-10T15:00:54Z" finished-at="2020-04-10T15:00:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reduceBytesAfterComplete -->
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="testSetup" is-config="true" duration-ms="1" started-at="2020-04-10T15:00:56Z" finished-at="2020-04-10T15:00:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:56Z" finished-at="2020-04-10T15:00:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testteardown -->
-        <test-method status="PASS" signature="uploadFileSizeZero()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="uploadFileSizeZero" duration-ms="1272" started-at="2020-04-10T15:00:56Z" finished-at="2020-04-10T15:00:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadFileSizeZero -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.FunctionalUploadFile@7085bdee]" name="testteardown" is-config="true" duration-ms="1" started-at="2020-04-10T15:00:57Z" finished-at="2020-04-10T15:00:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testteardown -->
-      </class> <!-- tests.FunctionalUploadFile -->
-      <class name="tests.FunctionalUploadToken">
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:57Z" finished-at="2020-04-10T15:00:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="uploadInvalidTokenGet()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="uploadInvalidTokenGet" duration-ms="1319" started-at="2020-04-10T15:00:57Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadInvalidTokenGet -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testteardown -->
-        <test-method status="PASS" signature="uploadInvalidTokenPost()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="uploadInvalidTokenPost" duration-ms="248" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadInvalidTokenPost -->
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="testSetup()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testSetup" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetup -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:00:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testteardown -->
-        <test-method status="PASS" signature="uploadInvalidTokenPut()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="uploadInvalidTokenPut" duration-ms="1540" started-at="2020-04-10T15:00:59Z" finished-at="2020-04-10T15:01:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uploadInvalidTokenPut -->
-        <test-method status="PASS" signature="testteardown()[pri:0, instance:tests.FunctionalUploadToken@1ce92674]" name="testteardown" is-config="true" duration-ms="0" started-at="2020-04-10T15:01:00Z" finished-at="2020-04-10T15:01:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testteardown -->
-      </class> <!-- tests.FunctionalUploadToken -->
+      </class> <!-- testCases.DeleteScenario -->
     </test> <!-- APIAutomation -->
   </suite> <!-- APIComplete -->
 </testng-results>

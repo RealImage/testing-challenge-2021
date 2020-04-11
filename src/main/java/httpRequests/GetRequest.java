@@ -1,109 +1,106 @@
 package httpRequests;
 
-
-import java.util.HashMap;
-
-import org.testng.asserts.SoftAssert;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import pojos.Get;
+import pojos.GetSharedFiles;
+import utilities.CommonMethods;
+import utilities.Reports;
 
-public class GetRequest {
+public class GetRequest extends CommonMethods {
+
 	String baseURI;
 	String sessionID;
-	
-	public GetRequest(String baseURI, String sessionID) {
+	Reports report;
+
+	public GetRequest(String baseURI, String sessionID, Reports report) {
 		this.baseURI = baseURI;
 		this.sessionID = sessionID;
+		this.report = report;
 	}
-	
-	
-	public Response makeGetRequest(String file, String resource){
-		
+
+	public Response makeGetRequest(String file, String resource) {
+
 		RestAssured.baseURI = baseURI;
-        RequestSpecification httpRequest = RestAssured.given().relaxedHTTPSValidation();
-        
-        //query param
-        httpRequest.queryParam("token", sessionID);
-        
-        if(resource.equals("files")){
-        	httpRequest.queryParam("getSharedFiles", file);
-        }else if(resource.equals("upload")){
-        	httpRequest.queryParam("fileId", file);
-        }
-        
-        return httpRequest.get("//" + resource);
-        
+		RequestSpecification httpRequest = RestAssured.given().relaxedHTTPSValidation();
+
+		// query param
+		httpRequest.queryParam("token", sessionID);
+
+		if (resource.equals("files")) {
+			httpRequest.queryParam("getSharedFiles", file);
+		} else if (resource.equals("upload")) {
+			httpRequest.queryParam("fileId", file);
+		}
+
+		httpRequest.expect().defaultParser(Parser.JSON);
+
+		return httpRequest.get("//" + resource);
+
 	}
-	
-	
-	public HashMap<String, String> validateStatusRetrieveDataGetRequest(Response getResponse,HashMap<String, String> map) throws Exception{
-		
-		JsonPath path = new JsonPath(getResponse.asString());
-        
-        System.out.println(getResponse.statusCode());
-        if(getResponse.statusCode() != 200){
-        	//fail report
-        	throw new Exception("Upload get Response code not 200.  Test case failed");
-        }
-        
-        System.out.println(getResponse.asString());
-        
-        map.put("bytesCompleted",  path.getString("bytesCompleted"));
-                System.out.println(map.get("bytesCompleted"));
-        
-        
-                
-        map.put("status",  path.getString("status"));
-        System.out.println(map.get("status"));
-        
-      
-        return map;
+
+	public boolean validateGet(Response response, LinkedHashMap<String, String> testData) throws Exception {
+
+		if (!validateStatusCode(response, 200)) {
+			report.addStep(Reports.inBold("Get Request failed") + " with status code " + response.statusCode(),
+					Reports.results.FAILED.toString());
+			throw new Exception("Post Request failed");
+		} else {
+			report.addStep(Reports.inBold("Get Request success: ") + response.asString(),
+					Reports.results.PASSED.toString());
+		}
+
+		Get get = response.as(Get.class);
+		return validateUploadGet(get, testData);
 	}
-	
-	public boolean assertFirstGet(HashMap<String, String> validation){
-		boolean testPass = true;
-		
-		if(!validation.get("bytesCompleted").equals("0")){
-	        if(!validation.get("fileSize").equals("0"))	
-			testPass = false;
-	        	//report
-	    }
-	        
-	    if(validation.get("status").equals("Pending")){
-	    	if(Integer.parseInt(validation.get("fileSize"))==0){
-	    		testPass = false;
-	    	}
-	    }else if(!validation.get("status").equals("Pending")){
-	    	if(!validation.get("fileSize").equals("0"))	
-				testPass = false;
-        	//report
-	    }
-	    
-	    
-	        
-	    //to check file name hash can be included
-		
-		return testPass;
-		
+
+	public boolean validateUploadGet(Get get, LinkedHashMap<String, String> testData) {
+		if ((get.getName().equals(testData.get("name")) && get.getFileId().equals(testData.get("fileId"))
+				&& get.getStatus().equals("Pending") && get.getBytesCompleted().equals("0"))) {
+			return true;
+		} else if ((get.getName().equals(testData.get("name")) && get.getFileId().equals(testData.get("fileId"))
+				&& get.getStatus().equals("Completed") && get.getBytesCompleted().equals(testData.get("size")))) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
-	public boolean assertGetAfterPut(HashMap<String, String> validation, String uploaded, String status){
-		boolean testPass = true;
-		 if(!validation.get("bytesCompleted").equals(uploaded)){
-	        	testPass = false;
-	        	//report
-	        }
-		 
-		 if(!validation.get("status").equals(status)){
-	        	testPass = false;
-	        	//report
-	        }
-		
-		return testPass;
+
+	public boolean validateGetFiles(Response response, LinkedHashMap<String, String> testData) throws Exception {
+
+		if (!validateStatusCode(response, 200)) {
+			report.addStep(Reports.inBold("Get Request failed") + " with status code " + response.statusCode(),
+					Reports.results.FAILED.toString());
+			throw new Exception("Post Request failed");
+		} else {
+			report.addStep(Reports.inBold("Get Request success: ") + response.asString(),
+					Reports.results.PASSED.toString());
+		}
+
+		Get[] get = response.as(Get[].class);
+		return validateFilesGet(get, testData);
 	}
-	
-	
+
+	public boolean validateFilesGet(Get[] getFiles, LinkedHashMap<String, String> testData) {
+		boolean flag = false;
+		
+		for(Get get : getFiles) {
+			//Get get = gets.getGet();
+			if ((get.getName().equals(testData.get("name")) && get.getFileId().equals(testData.get("fileId"))
+					)) {
+				flag = true;
+			} else if ((get.getName().equals(testData.get("name")) && get.getFileId().equals(testData.get("fileId"))
+					)) {
+				flag = true;
+			}
+
+		}
+		return flag;
+	}
+
 }

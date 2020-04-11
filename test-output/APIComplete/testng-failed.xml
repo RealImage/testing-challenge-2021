@@ -3,31 +3,30 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [APIComplete]">
   <test thread-count="5" name="APIAutomation(failed)">
     <classes>
-      <class name="tests.FunctionalUploadToken">
+      <class name="testCases.FilesShareScenario">
         <methods>
-          <include name="uploadInvalidTokenGet"/>
-          <include name="initialSetup"/>
-          <include name="testSetup"/>
-          <include name="scenarioteardown"/>
+          <include name="deleteFile"/>
+          <include name="scenarioTeardown"/>
           <include name="tearDown"/>
+          <include name="testSetup"/>
+          <include name="rejectShare"/>
+          <include name="approveShare"/>
+          <include name="initEssentials"/>
           <include name="scenarioSetup"/>
-          <include name="uploadInvalidTokenPut"/>
-          <include name="uploadInvalidTokenPost"/>
-          <include name="testteardown"/>
+          <include name="testTeardown"/>
         </methods>
-      </class> <!-- tests.FunctionalUploadToken -->
-      <class name="tests.FunctionalUploadFile">
+      </class> <!-- testCases.FilesShareScenario -->
+      <class name="testCases.UploadFileScenario">
         <methods>
-          <include name="uploadFileSizeZero"/>
-          <include name="initialSetup"/>
-          <include name="testSetup"/>
-          <include name="scenarioteardown"/>
+          <include name="uploadFile"/>
+          <include name="scenarioTeardown"/>
           <include name="tearDown"/>
+          <include name="testSetup"/>
+          <include name="initEssentials"/>
           <include name="scenarioSetup"/>
-          <include name="testteardown"/>
-          <include name="reduceBytesAfterComplete"/>
+          <include name="testTeardown"/>
         </methods>
-      </class> <!-- tests.FunctionalUploadFile -->
+      </class> <!-- testCases.UploadFileScenario -->
     </classes>
   </test> <!-- APIAutomation(failed) -->
 </suite> <!-- Failed suite [APIComplete] -->
