@@ -1,0 +1,19 @@
+# Created at 2020-04-11T15:56:35.689
+Boot Manifest-JAR contains absolute paths in classpath 'G:\Prabu-2020\Test Architect\Eclipse_Projects\ShareboxAPI\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
+# Created at 2020-04-11T15:56:38.619
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2020-04-11T15:56:38.625
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/C:/Users/Prabu/.m2/repository/org/codehaus/groovy/groovy/2.5.8/groovy-2.5.8.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+
+# Created at 2020-04-11T15:56:38.660
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+
+# Created at 2020-04-11T15:56:38.662
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2020-04-11T15:56:38.663
+WARNING: All illegal access operations will be denied in a future release
+

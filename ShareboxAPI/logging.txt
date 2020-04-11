@@ -1,0 +1,208 @@
+Request method:	POST
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = file; filename = file
+				Content-Type: text/plain
+
+				G:\Prabu-2020\Test Architect\Eclipse_Projects\ShareboxAPI\src\test\java\resources\TestFile.txt
+				------------
+				Content-Disposition: form-data; name = name; filename = file
+				Content-Type: text/plain
+
+				TestFile.txt
+				------------
+				Content-Disposition: form-data; name = size; filename = file
+				Content-Type: text/plain
+
+				15
+				------------
+				Content-Disposition: form-data; name = hash; filename = file
+				Content-Type: text/plain
+
+				eca93f1651bb98d5ba14dd013d266911
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:22 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-e9d1504a-b512-47e0-a1eb-60d1f0eaf7be; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:22 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"secretKey": "cRdYi0AHocWV0UFzzos7TOWESOxK2csKuFxbRH8t", "accessKey": "ASIAYVIZ45EGDL3GYB7D", "sessionToken": "FwoGZXIvYXdzECQaDN04/4Sd98ka9siMSyLSAfOsUzh9j+r6AoOYoWEwzFkz5O+aSfGqULnLe/g5JWvd+8WMzZau3977YPWFiQsYmHth/Pm8+QbouTduT8/fehMMpbtFscSgq4yz9YQlSQEWCH2QrKcaTA2p6b54lT3anJQasfo1E7bXTONBLz/sEAC/CPtw+ADj2fK7KTvVzFuzBuO+lohsFmVRdu0VKgxTpB9u4vhPLN7D5yGvjeHpWttR7GLjv2LgG0knfy/38T3DQ2ZIj3fE8Brxqjewp78JHAtG66zKEcwDOuA3Z0nzBbRC9iigt8b0BTIpezywXzGeaUXW4yRM24UJCx/sipvlvj34+vyAL9Ua4Fyrh1RR3osOu9o=", "fileId": "16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c"}</body>
+</html>
+Request method:	PUT
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = fileId; filename = file
+				Content-Type: text/plain
+
+				16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c
+				------------
+				Content-Disposition: form-data; name = bytesCompleted; filename = file
+				Content-Type: text/plain
+
+				15
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:24 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-c121a6c5-5e66-4ce6-8ecd-efe277ed5702; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:24 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"message": "Bytes has been updated successfully"}</body>
+</html>
+Request method:	GET
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=c28bb3a5-a199-4be4-a653-87573c3b9de8&fileId=16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+				fileId=16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:25 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-94d9a6f1-259e-4da1-8b96-2271e7e47b90; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:25 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"status": "Completed", "name": "TestFile.txt", "fileHash": "eca93f1651bb98d5ba14dd013d266911", "createdOn": "2020-04-11 10:27:20", "bytesCompleted": 15, "size": 15, "fileId": "16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c"}</body>
+</html>
+Request method:	GET
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:26 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-b106804c-28f5-45a5-a1bb-fe4f2d22b84d; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:26 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>[{"status": "Completed", "name": "TestFile.txt", "fileHash": "eca93f1651bb98d5ba14dd013d266911", "createdOn": "2020-04-11 10:27:20", "bytesCompleted": 15, "size": 15, "fileId": "16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c"}]</body>
+</html>
+Request method:	POST
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = fileId; filename = file
+				Content-Type: text/plain
+
+				16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c
+				------------
+				Content-Disposition: form-data; name = shareTo; filename = file
+				Content-Type: text/plain
+
+				227
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:27 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-9432729a-bcbe-4f0b-aabc-63a787613eb1; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:27 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"message": "Successfully Shared"}</body>
+</html>
+Request method:	DELETE
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=c28bb3a5-a199-4be4-a653-87573c3b9de8
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = fileId; filename = file
+				Content-Type: text/plain
+
+				16ea7829-c2f0-4ea7-bb79-b4bf53cecd2c
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 11 Apr 2020 10:27:28 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=27.4.122.68-6b1dd25e-4ad8-44bd-a240-f98fdd02fa30; httponly; Path=/
+Expires: Sat, 11 Apr 2020 10:27:28 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"message": "File deleted successfully"}</body>
+</html>
