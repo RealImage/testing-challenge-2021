@@ -1,6 +1,9 @@
 # Automation Coding Challenge 
 
-In this coding challenge, you need to write test cases and automate the same using the APIs of a Web Application called “ShareBox”.
+Automation of Test cases using the APIs of a Web Application called “ShareBox”.
+
+# EXECUTION VIDEO LINK:
+Click on this below link to view the Video Execution: https://www.loom.com/share/3f2ae936a66e43a9bb26d6eb89156d06
 
 #### Notes: 
 * For scenarios to automate, refer: https://github.com/RealImage/testing-challenge-2019#scenarios-to-automate-api-documentation-httpsqubeshareboxdocsapiaryio
@@ -8,11 +11,13 @@ In this coding challenge, you need to write test cases and automate the same usi
 * You have to fork the Github repository and raise a pull request to the original repository once you completed the coding part with testcases 
 
 #### Prerequisites
-* Signup in ShareBox using web URL: https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox
+* Signup four new users in ShareBox using web URL: https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox
 * Generate Token using the option available in the ShareBox Website
-* Save the token for automating the APIs of ShareBox 
+* Save the token for automating the APIs of ShareBox -> Edit the primaryToken, FirstRecipientToken and SecondRecipientToken in karate-config.js
+* We can reuse the users in DB for primary,firstRecipient,SecondRecipient users but need a fresh token for newaccountToken 
+* newAccountToken is used to verify that there are no files present when we call getAllFiles endpoint for that particular account.
 
-#### Scenarios to Automate (API documentation: https://qubesharebox.docs.apiary.io): 
+#### Scenarios Automated (API documentation: https://qubesharebox.docs.apiary.io): 
 * Get the list of files in your account
 * Upload any file into your account 
 * Check the uploaded files getting listed in your account 
@@ -20,13 +25,32 @@ In this coding challenge, you need to write test cases and automate the same usi
 * Create another account (same as Prerequisite)  and share files from one account to another account 
 * Approve/Reject the shared file from the receiver account 
 
-   **Note:** Add a necessary validation for all the scenarios.
+  
+## Setup
+
+* Maven should be installed (As specified in pom.xml)
+* Java 8+ Version
+* Clone/copy project
+
+## Running tests (Sequential Execution)
+
+* cd to project folder
+
+* run `mvn clean test -Dkarate.env="" -Dcucumber.options=""`
+    
+* or use `mvn clean install
+
+## Statistics
+
+* Total Number of Test Cases : 36
+* Total Time Taken to Run: 37 secs
+* Number of Threads: 1
+
+ elapsed:  38.34 | threads:    1 | thread time: 37.51 
+ features:     7 | ignored:    0 | efficiency: 0.98
+ scenarios:   36 | passed:    36 | failed: 0
+ 
+ ### Cucumber reports can be found in the Target folder under cucumber-html-reports folder
+`
 
 
-#### API Sample:
-##### Host API URL: https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api
-##### Scenario: To get a list of files in your account (use the token which you got from the prerequisite)
-##### cURL command: 
-```
-curl -X GET “https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?getSharedFiles=test&token=<token_generated>” -H “accept: application/json”
-```
