@@ -2,12 +2,10 @@ package com.qube.RestApi;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
-import org.apache.commons.lang.StringUtils;
 
 
 /* 
@@ -20,38 +18,17 @@ import org.apache.commons.lang.StringUtils;
 public class RestApiTestCase 
 {
 	private String url;
-	private String baseUrl = StringUtils.EMPTY;
+	private String baseUrl = "";
 	private String description;
 	private RequestMethod requestMethod;
 	private Map<String, String> formData = new HashMap<String, String>();
-	private String multipartFormData = StringUtils.EMPTY;
+	private String multipartFormData = "";
 	private int expectedStatusCode;
-	private String expectedResponse = StringUtils.EMPTY;
+	private String expectedResponse = "";
 	private Map<String, String> headers = new HashMap<String, String>();
 	private Map<String, String> parameters = new HashMap<String, String>();
 	private Map<String, String> expectedFields = new HashMap<String, String>();
 
-	/**
-	 * Header values that need to be looked up with begin with "{" and end with
-	 * "}"
-	 */
-	public static boolean isHeaderValueVariable(String headerValue) {
-		if (StringUtils.isBlank(headerValue)) {
-			return false;
-		}
-		return headerValue.startsWith("{") && headerValue.endsWith("}");
-	}
-
-	public static String getTrimmedHeaderValue(String headerValue) {
-		if (StringUtils.isBlank(headerValue)) {
-			return StringUtils.EMPTY;
-		}
-
-		if (isHeaderValueVariable(headerValue)) {
-			return headerValue.substring(1, headerValue.length() - 1);
-		}
-		return headerValue;
-	}
 
 	public String getMultipartFormData() {
 		return multipartFormData;

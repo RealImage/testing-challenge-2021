@@ -1,7 +1,6 @@
 <testCases>
 	<testCase>
         <description>user1 uploads a file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>

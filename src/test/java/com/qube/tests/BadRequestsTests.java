@@ -24,7 +24,7 @@ public class BadRequestsTests extends BaseTest
 		logger.info(testCase.getDescription());
 		logger.info(testCase.getBaseUrl() + testCase.getUrl());
 		
-		updateUserToken(testCase);
+		updateBaseUrlAndUserToken(testCase);
 		
 		Response response = restApiTestCaseClient.call(testCase);
 		String stringResponse = response.asString();

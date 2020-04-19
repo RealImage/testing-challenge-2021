@@ -1,7 +1,6 @@
 <testCases>
 	<testCase>
         <description>user1 uploads a text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -16,12 +15,11 @@
                 <value>#user1Token</value>
             </entry>
         </parameters>
-        <multipartFormData>src/test/resources/testfiles/testfile1.txt</multipartFormData>
+        <multipartFormData>src/test/resources/testfiles/testfile7.txt</multipartFormData>
         <expectedStatusCode>200</expectedStatusCode>
     </testCase>
     <testCase>
         <description>user1 updates the text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>PUT</requestMethod>
         <headers>
@@ -45,7 +43,6 @@
     </testCase>
     <testCase>
         <description>user1 share files to user 2</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -74,7 +71,6 @@
     </testCase>
     <testCase>
         <description>user2 accepts shared files</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>PUT</requestMethod>
         <headers>
@@ -108,7 +104,6 @@
     </testCase>
     <testCase>
         <description>user1 deletes the file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>DELETE</requestMethod>
         <headers>
@@ -138,7 +133,6 @@
     </testCase>
     <testCase>
         <description>get share files for user2 after user1 deletes</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>

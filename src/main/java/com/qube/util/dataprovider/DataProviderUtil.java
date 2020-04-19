@@ -5,13 +5,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
-/** 
- * 
- */
 public class DataProviderUtil 
 {
 	protected static Map<String, String> resolveDataProviderArguments(
@@ -39,8 +34,7 @@ public class DataProviderUtil
 		for (int argsCount = 0; argsCount < args.value().length; argsCount++) 
 		{
 			String[] parts = args.value()[argsCount].split("=");
-			arguments.put(StringUtils.trim(parts[0]),
-					StringUtils.trim(parts[1]));
+			arguments.put(parts[0].trim(),parts[1].trim());
 		}
 		return arguments;
 	}

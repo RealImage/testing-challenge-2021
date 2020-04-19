@@ -82,8 +82,9 @@ public class BaseTest extends RestApiTest{
         }
     }
 	
-	protected void updateUserToken(RestApiTestCase testCase)
+	protected void updateBaseUrlAndUserToken(RestApiTestCase testCase)
 	{
+		testCase.setBaseUrl(baseUrl);
 		if(testCase.getParameters().get("token").equals("#user1Token"))
 			testCase.addParameter("token", user1Token);
 		else if(testCase.getParameters().get("token").equals("#user2Token"))
@@ -130,7 +131,7 @@ public class BaseTest extends RestApiTest{
 			logger.info(testCase.getDescription());
 			logger.info(testCase.getBaseUrl() + testCase.getUrl());
 			
-			updateUserToken(testCase);
+			updateBaseUrlAndUserToken(testCase);
 			
 			//Updating runtime data before sending the request
 			if(testCase.getRequestMethod().equals(RequestMethod.GET))

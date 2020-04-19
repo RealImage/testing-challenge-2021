@@ -1,7 +1,6 @@
 <testCases>    
 	<testCase>
         <description>upload a file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -16,12 +15,11 @@
                 <value>142c7fb2-b964-4dee-b4d2-c606aa0eb3f7</value>
             </entry>
         </parameters>
-        <multipartFormData>src/test/resources/testfiles/testfile2.txt</multipartFormData>
+        <multipartFormData>src/test/resources/testfiles/testfile4.txt</multipartFormData>
         <expectedStatusCode>200</expectedStatusCode>
     </testCase>
     <testCase>
         <description>get share files for user 1</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -37,12 +35,10 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        </expectedResponse>
+        <expectedResponse>[]</expectedResponse>
     </testCase>
     <testCase>
         <description>share files to user 2</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -73,7 +69,6 @@
     </testCase>
     <testCase>
         <description>get share files for user 2 before accepting</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -89,13 +84,10 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        {}
-        </expectedResponse>
+        <expectedResponse>[]</expectedResponse>
     </testCase>
     <testCase>
         <description>user2 accepts shared files</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>PUT</requestMethod>
         <headers>
@@ -129,7 +121,6 @@
     </testCase>
     <testCase>
         <description>get share files for user 2 after accepting</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>

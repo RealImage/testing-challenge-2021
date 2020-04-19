@@ -1,1 +1,2 @@
-This is a qube test file used for automation.
+This is a qube test file2 used for automation.
+Adding a random message.

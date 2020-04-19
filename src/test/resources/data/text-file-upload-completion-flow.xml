@@ -1,7 +1,6 @@
 <testCases>    
 	<testCase>
         <description>upload a text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -40,7 +39,6 @@
     
     <testCase>
         <description>Get file details of text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -75,7 +73,6 @@
     
     <testCase>
         <description>update the text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>PUT</requestMethod>
         <headers>
@@ -100,7 +97,6 @@
     
     <testCase>
         <description>get file info after updating the text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -134,7 +130,6 @@
     </testCase>
     <testCase>
         <description>delete the text file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>DELETE</requestMethod>
         <headers>

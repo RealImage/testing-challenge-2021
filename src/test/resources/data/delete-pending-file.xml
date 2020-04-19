@@ -1,7 +1,6 @@
 <testCases>    
 	<testCase>
         <description>user1 uploads a file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -16,12 +15,11 @@
                 <value>#user1Token</value>
             </entry>
         </parameters>
-        <multipartFormData>src/test/resources/testfiles/testfile4.txt</multipartFormData>
+        <multipartFormData>src/test/resources/testfiles/testfile5.txt</multipartFormData>
         <expectedStatusCode>200</expectedStatusCode>
     </testCase>
 	<testCase>
         <description>delete the pending file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>DELETE</requestMethod>
         <headers>

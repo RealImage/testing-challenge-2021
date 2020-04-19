@@ -4,11 +4,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.testng.Assert.fail;
 
-import org.apache.sling.commons.json.JSONObject;
+//import org.apache.sling.commons.json.JSONObject;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONCompare;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.JSONCompareResult;
+import org.json.JSONArray;
+import org.skyscreamer.jsonassert.JSONParser;
 
 /**
  * This class provides support for assert comparison of json and
@@ -23,9 +26,20 @@ public class RestApiTest
 			int actualResponseStatusCode, String actualResponse,
 			JSONCompareMode jsonCompareMode) throws Exception 
 	{
+		JSONCompareResult result;
 		try 
 		{
-			JSONCompareResult result = JSONCompare.compareJSON(
+			if(actualResponse.startsWith("["))
+			{
+				JSONArray expectedResponse = (JSONArray) JSONParser
+						.parseJSON(restApiTestCase.getExpectedResponse());
+				JSONArray actualResponseJson = (JSONArray) JSONParser
+						.parseJSON(actualResponse);
+				result = JSONCompare.compareJSON(
+						expectedResponse, actualResponseJson, jsonCompareMode);
+			}
+			else	
+			 result = JSONCompare.compareJSON(
 					restApiTestCase.getExpectedResponse(), actualResponse,
 					jsonCompareMode);
 			assertThat(
@@ -54,7 +68,7 @@ public class RestApiTest
 					+ buildActualResponseMessage(actualResponseStatusCode,
 							actualResponse));
 		}
-	}
+	}	
 
 	private String buildExpectedResponseMessage(RestApiTestCase restApiTestCase) {
 		return String.format("Expected Response: %s Response Code \n  %s",
@@ -64,14 +78,13 @@ public class RestApiTest
 
 	private String buildActualResponseMessage(int actualResponseCode,
 			String actualResponse)
-			throws org.apache.sling.commons.json.JSONException {
+	{
 		return String.format("Actual Response: %s Response Code \n  %s",
 				actualResponseCode, actualResponse);
 	}
 
 	private String buildActualResponseMessageInJson(
-			int actualResponseCode, String actualResponse)
-			throws org.apache.sling.commons.json.JSONException 
+			int actualResponseCode, String actualResponse) throws JSONException
 	{
 		JSONObject json = new JSONObject(actualResponse);
 		return String.format("Actual Response: %s Response Code \n  %s",

@@ -1,7 +1,6 @@
 <testCases>    
 	<testCase>
         <description>upload a file</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/upload</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -21,7 +20,6 @@
     </testCase>
     <testCase>
         <description>get share files for user 1</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -37,12 +35,10 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        </expectedResponse>
+        <expectedResponse>[]</expectedResponse>
     </testCase>
     <testCase>
         <description>share files to user 2</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -73,7 +69,6 @@
     </testCase>
     <testCase>
         <description>get share files for user 2 before accepting</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -89,13 +84,10 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        []
-        </expectedResponse>
+        <expectedResponse>[]</expectedResponse>
     </testCase>
     <testCase>
         <description>user2 reject shared files</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>PUT</requestMethod>
         <headers>
@@ -129,7 +121,6 @@
     </testCase>
     <testCase>
         <description>get share files for user 2 after rejecting</description>
-        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
         <url>/sharebox/api/files</url>
         <requestMethod>GET</requestMethod>
         <headers>
@@ -145,8 +136,6 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        []
-        </expectedResponse>
+        <expectedResponse>[]</expectedResponse>
     </testCase>
 </testCases>
