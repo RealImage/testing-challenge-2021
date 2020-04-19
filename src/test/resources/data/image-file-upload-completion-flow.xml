@@ -1,0 +1,166 @@
+<testCases>    
+	<testCase>
+        <description>upload a jpg file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>POST</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <multipartFormData>src/test/resources/testfiles/Test_image.jpg</multipartFormData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedFields>
+        	<entry>
+	            <key>secretKey</key>
+	            <value>NOT_NULL</value>
+	        </entry>
+	        <entry>
+	            <key>accessKey</key>
+	            <value>NOT_NULL</value>
+	        </entry>
+	        <entry>
+	            <key>sessionToken</key>
+	            <value>NOT_NULL</value>
+	        </entry>
+	        <entry>
+	            <key>fileId</key>
+	            <value>UUID</value>
+	        </entry>
+        </expectedFields>
+    </testCase>
+    
+    <testCase>
+        <description>Get file details of jpg file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>GET</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedFields>
+        	<entry>
+        		<key>createdOn</key>
+        		<value>DATETIME</value>
+        	</entry>
+        </expectedFields>
+        <expectedResponse>
+        { "status":"Pending",
+		   "name":"#fileName",
+		   "fileHash":"#fileHash",
+		   "bytesCompleted":0,
+		   "size":#fileSize,
+		   "fileId":"#fileId"
+		}
+        </expectedResponse>
+    </testCase>
+    
+    <testCase>
+        <description>update the jpg file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>PUT</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <formData>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        {"message": "Bytes has been updated successfully"}
+        </expectedResponse>
+    </testCase>
+    
+    <testCase>
+        <description>get file info for jpg file after updating</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>GET</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedFields>
+        	<entry>
+        		<key>createdOn</key>
+        		<value>DATETIME</value>
+        	</entry>
+        </expectedFields>
+        <expectedResponse>
+        { "status":"Completed",
+		   "name":"#fileName",
+		   "fileHash":"#fileHash",
+		   "bytesCompleted":#fileSize,
+		   "size":#fileSize,
+		   "fileId":"#fileId"
+		}
+        </expectedResponse>
+    </testCase>
+    <testCase>
+        <description>delete the jpg file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/files</url>
+        <requestMethod>DELETE</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <formData>
+            <entry>
+                <key>fileId</key>
+                <value></value>
+            </entry>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        {
+		  "message": "File deleted successfully"
+		}
+        </expectedResponse>
+    </testCase>
+    
+</testCases>

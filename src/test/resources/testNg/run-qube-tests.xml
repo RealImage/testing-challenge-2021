@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Qube Test" parallel="tests" verbose="1" generateTestResultAttributes="true">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+
+    <parameter name="testEnv" value="PROD"/>
+	<test name="File Upload Flow">
+        <classes>
+              <class name="com.qube.tests.UploadFlowTests"/>
+        </classes>
+    </test>
+    <test name="Unauthorised Error tests">
+        <classes>
+              <class name="com.qube.tests.UnAuthorisedErrorTests"/>
+        </classes>
+    </test>
+    <test name="File Delete flow tests">
+        <classes>
+              <class name="com.qube.tests.FileDeleteFlowTests"/>
+        </classes>
+    </test>
+    <test name="File Share tests">
+        <classes>
+              <class name="com.qube.tests.FileShareTests"/>
+        </classes>
+    </test>
+    <test name="Bad Requests tests">
+        <classes>
+              <class name="com.qube.tests.BadRequestsTests"/>
+        </classes>
+    </test>
+</suite>

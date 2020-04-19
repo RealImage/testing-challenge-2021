@@ -1,0 +1,73 @@
+<testCases>
+	<testCase>
+        <description>user1 uploads a file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>POST</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <multipartFormData>src/test/resources/testfiles/testfile3.txt</multipartFormData>
+        <expectedStatusCode>200</expectedStatusCode>
+    </testCase>
+    <testCase>
+        <description>user1 updates the file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>PUT</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <formData>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        {"message": "Bytes has been updated successfully"}
+        </expectedResponse>
+    </testCase>
+    <testCase>
+        <description>user2 attempts to delete the file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/files</url>
+        <requestMethod>DELETE</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user2Token</value>
+            </entry>
+        </parameters>
+        <formData>
+            <entry>
+                <key>fileId</key>
+                <value></value>
+            </entry>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+    </testCase>
+    
+    
+</testCases>

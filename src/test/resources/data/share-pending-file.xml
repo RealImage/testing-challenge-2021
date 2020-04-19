@@ -1,0 +1,22 @@
+<testCases>
+	<testCase>
+        <description>user1 uploads a file</description>
+        <baseUrl>https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com</baseUrl>
+        <url>/sharebox/api/upload</url>
+        <requestMethod>POST</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>142c7fb2-b964-4dee-b4d2-c606aa0eb3f7</value>
+            </entry>
+        </parameters>
+        <multipartFormData>src/test/resources/testfiles/testfile2.txt</multipartFormData>
+        <expectedStatusCode>200</expectedStatusCode>
+    </testCase>
+</testCases>
