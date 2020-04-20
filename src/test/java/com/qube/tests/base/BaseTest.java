@@ -34,6 +34,8 @@ public class BaseTest extends RestApiTest{
 	protected static String user2Token;
 	protected static String user1Email;
 	protected static String user2Email;
+	protected static String user1Id;
+	protected static String user2Id;
 	protected String fileId = null;
 	protected File file;
 	
@@ -69,6 +71,8 @@ public class BaseTest extends RestApiTest{
             user2Token = properties.getProperty(String.format("USER2_TOKEN.%s", testEnv.toUpperCase()));
             user1Email = properties.getProperty(String.format("USER1_EMAIL.%s", testEnv.toUpperCase()));
             user2Email = properties.getProperty(String.format("USER2_EMAIL.%s", testEnv.toUpperCase()));
+            user1Id = properties.getProperty(String.format("USER1_ID.%s", testEnv.toUpperCase()));
+            user2Id = properties.getProperty(String.format("USER2_ID.%s", testEnv.toUpperCase()));
         } 
         catch (FileNotFoundException e) 
         {
@@ -82,13 +86,31 @@ public class BaseTest extends RestApiTest{
         }
     }
 	
-	protected void updateBaseUrlAndUserToken(RestApiTestCase testCase)
+	protected void updateTestCaseRequest(RestApiTestCase testCase)
 	{
 		testCase.setBaseUrl(baseUrl);
 		if(testCase.getParameters().get("token").equals("#user1Token"))
 			testCase.addParameter("token", user1Token);
 		else if(testCase.getParameters().get("token").equals("#user2Token"))
 			testCase.addParameter("token", user2Token);
+		
+		//Updating runtime data before sending the request
+		if(testCase.getRequestMethod().equals(RequestMethod.GET))
+			testCase.addParameter("fileId", fileId);
+		else if(testCase.getRequestMethod().equals(RequestMethod.PUT))
+		{
+			testCase.addFormData("fileId", fileId);
+			if(testCase.getUrl().contains("/upload"))
+				testCase.addFormData("bytesCompleted", Long.toString(file.length()));
+		}
+		else if(testCase.getRequestMethod().equals(RequestMethod.POST) &&
+				testCase.getUrl().contains("/files"))
+		{
+			testCase.addFormData("fileId", fileId);
+			if(testCase.getFormData().get("shareTo").equals("#user2Id"))
+				testCase.addFormData("shareTo", user2Id);
+				
+		}
 	}
 	
 	protected void validateExpectedFields(RestApiTestCase testCase, String actualResponse) throws JSONException
@@ -131,25 +153,8 @@ public class BaseTest extends RestApiTest{
 			logger.info(testCase.getDescription());
 			logger.info(testCase.getBaseUrl() + testCase.getUrl());
 			
-			updateBaseUrlAndUserToken(testCase);
-			
-			//Updating runtime data before sending the request
-			if(testCase.getRequestMethod().equals(RequestMethod.GET))
-				testCase.addParameter("fileId", fileId);
-			else if(testCase.getRequestMethod().equals(RequestMethod.PUT))
-			{
-				testCase.addFormData("fileId", fileId);
-				if(testCase.getUrl().contains("/upload"))
-					testCase.addFormData("bytesCompleted", Long.toString(file.length()));
-			}
-			else if(testCase.getRequestMethod().equals(RequestMethod.POST) &&
-					testCase.getUrl().contains("/files"))
-			{
-				testCase.addFormData("fileId", fileId);
-				if(testCase.getFormData().get("shareTo").equals("#user2Email"))
-					testCase.addFormData("shareTo", user2Email);
-					
-			}
+			//update the token, userid and baseUrl in testCase
+			updateTestCaseRequest(testCase);
 			
 			//making api request and capturing the response
 			Response response = restApiTestCaseClient.call(testCase);

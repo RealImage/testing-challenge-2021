@@ -17,7 +17,7 @@ public class UploadFlowTests extends BaseTest
 	private static final String IMAGE_FILE_UPLOAD_TEST_DATA = "/image-file-upload-completion-flow.xml";
 
 	
-	@Test(description = "file upload flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Text file upload flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + TEST_DATA_FILE_NAME)
 	public void uploadFlowTests(RestApiTestCase testCase) throws Exception 
 	{
@@ -25,7 +25,7 @@ public class UploadFlowTests extends BaseTest
 		
 	}
 	
-	@Test(description = "file upload flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Image file upload flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + IMAGE_FILE_UPLOAD_TEST_DATA)
 	public void imageUploadFlowTests(RestApiTestCase testCase) throws Exception 
 	{

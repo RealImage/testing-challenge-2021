@@ -12,7 +12,7 @@
         <parameters>
             <entry>
                 <key>token</key>
-                <value>142c7fb2-b964-4dee-b4d2-c606aa0eb3f7</value>
+                <value>#user1Token</value>
             </entry>
         </parameters>
         <multipartFormData>src/test/resources/testfiles/testfile4.txt</multipartFormData>
@@ -60,7 +60,7 @@
         	</entry>
         	<entry>
         		<key>shareTo</key>
-        		<value>#user2Email</value>
+        		<value>#user2Id</value>
         	</entry>
         </formData>
         <expectedStatusCode>200</expectedStatusCode>

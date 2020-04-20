@@ -16,12 +16,14 @@ public class UnAuthorisedErrorTests extends BaseTest
 			.getLogger(UnAuthorisedErrorTests.class);
 	private static final String TEST_DATA_FILE_NAME = "/invalid-token-cases.xml";
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Unauthorised error flows", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + TEST_DATA_FILE_NAME)
 	public void unauthorisedScenarios(RestApiTestCase testCase) throws Exception 
 	{
 		logger.info(testCase.getDescription());
 		logger.info(testCase.getBaseUrl() + testCase.getUrl());
+		
+		testCase.setBaseUrl(baseUrl);
 		
 		Response response = restApiTestCaseClient.call(testCase);
 		String stringResponse = response.asString();

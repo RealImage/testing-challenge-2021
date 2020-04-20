@@ -12,10 +12,108 @@
         <parameters>
             <entry>
                 <key>token</key>
-                <value>142c7fb2-b964-4dee-b4d2-c606aa0eb3f7</value>
+                <value>#user1Token</value>
             </entry>
         </parameters>
         <multipartFormData>src/test/resources/testfiles/testfile2.txt</multipartFormData>
         <expectedStatusCode>200</expectedStatusCode>
+    </testCase>
+    <testCase>
+        <description>user1 shares pending files to user 2</description>
+        <url>/sharebox/api/files</url>
+        <requestMethod>POST</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user1Token</value>
+            </entry>
+        </parameters>
+        <formData>
+        	<entry>
+        		<key>fileId</key>
+        		<value></value>
+        	</entry>
+        	<entry>
+        		<key>shareTo</key>
+        		<value>#user2Id</value>
+        	</entry>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        {"message": "Successfully Shared"}
+        </expectedResponse>
+    </testCase>
+    <testCase>
+        <description>user2 accepts shared files</description>
+        <url>/sharebox/api/files</url>
+        <requestMethod>PUT</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user2Token</value>
+            </entry>
+        </parameters>
+        <formData>
+        	<entry>
+        		<key>fileId</key>
+        		<value></value>
+        	</entry>
+        	<entry>
+        		<key>isAccepted</key>
+        		<value>true</value>
+        	</entry>
+        </formData>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        {
+		  "message": "Updated Successfully."
+		}
+        </expectedResponse>
+    </testCase>
+    <testCase>
+        <description>get files for user 2 after accepting pending files</description>
+        <url>/sharebox/api/files</url>
+        <requestMethod>GET</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user2Token</value>
+            </entry>
+            <entry>
+            	<key>getSharedFiles</key>
+            	<value>true</value>
+            </entry>
+        </parameters>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        [
+		   {
+		      "status":"Pending",
+		      "name":"#fileName",
+		      "fileHash":"#fileHash",
+		      "bytesCompleted":0,
+		      "size":#fileSize,
+		      "fileId":"#fileId"
+		   }
+		]
+        </expectedResponse>
     </testCase>
 </testCases>

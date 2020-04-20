@@ -30,20 +30,19 @@ public class RestApiTest
 		JSONCompareResult result;
 		try 
 		{
-			if(actualResponse.equals("[]"))
+			if(actualResponse.trim().equals("[]"))
 			{
-				 Assert.assertTrue(restApiTestCase.getExpectedResponse().trim().
-						 			equals(actualResponse),
+				String expectedResponse = restApiTestCase.getExpectedResponse().trim();
+				 Assert.assertTrue(expectedResponse.equals(actualResponse.trim()),
 						 			"JSON Array Response didn't match. "
 											+ LINE_BREAK
 											+ String.format("Description: %s",
 													restApiTestCase.getDescription())
 											+ LINE_BREAK
 											+ LINE_BREAK
-											+ buildExpectedResponseMessage(restApiTestCase)
+											+ "Expected response: " + expectedResponse
 											+ LINE_BREAK
-											+ buildActualResponseMessageInJson(
-													actualResponseStatusCode, actualResponse));
+											+ "Actual response: " + actualResponse);
 			}
 			else 
 			{

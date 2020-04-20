@@ -64,11 +64,12 @@
         	</entry>
         	<entry>
         		<key>shareTo</key>
-        		<value>#user2Email</value>
+        		<value>#user2Id</value>
         	</entry>
         </formData>
         <expectedStatusCode>200</expectedStatusCode>
         <expectedResponse>
+        {"message": "Successfully Shared"}
         </expectedResponse>
     </testCase>
     <testCase>
@@ -127,8 +128,12 @@
             </entry>
         </formData>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        </expectedResponse>
+        <expectedFields>
+        	<entry>
+                <key>error</key>
+                <value>NOT_NULL</value>
+            </entry>
+        </expectedFields>
     </testCase>
     <testCase>
         <description>get share files for user2 after delete attempt</description>
@@ -147,9 +152,6 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        []
-        </expectedResponse>
     </testCase>
     <testCase>
         <description>get share files for user1 after delete attempt</description>
@@ -172,8 +174,5 @@
             </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
-        <expectedResponse>
-        []
-        </expectedResponse>
     </testCase>
 </testCases>

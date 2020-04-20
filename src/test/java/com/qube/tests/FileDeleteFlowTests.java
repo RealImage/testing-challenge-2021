@@ -18,7 +18,7 @@ public class FileDeleteFlowTests extends BaseTest
 	private static final String delete_another_user_file = "/delete-another-user-file.xml";
 
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Delete flow 1", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + delete_file_flow1)
 	public void deleteFileFlow1(RestApiTestCase testCase) 
 	{
@@ -26,7 +26,7 @@ public class FileDeleteFlowTests extends BaseTest
 		
 	}
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Delete Flow 2", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + delete_file_flow2)
 	public void deleteFileFlow2(RestApiTestCase testCase) 
 	{
@@ -34,7 +34,7 @@ public class FileDeleteFlowTests extends BaseTest
 		
 	}
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Delete Pending File", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + delete_pending_file)
 	public void deletePendingFile(RestApiTestCase testCase) 
 	{
@@ -42,7 +42,7 @@ public class FileDeleteFlowTests extends BaseTest
 		
 	}
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Delete Another user file", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + delete_another_user_file)
 	public void deleteAnotherUserFile(RestApiTestCase testCase) 
 	{

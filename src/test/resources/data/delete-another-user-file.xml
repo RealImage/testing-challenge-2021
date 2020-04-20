@@ -63,7 +63,13 @@
                 <value></value>
             </entry>
         </formData>
-        <expectedStatusCode>200</expectedStatusCode>
+        <expectedStatusCode>500</expectedStatusCode>
+        <expectedFields>
+        	<entry>
+                <key>error</key>
+                <value>NOT_NULL</value>
+            </entry>
+        </expectedFields>
     </testCase>
     
     

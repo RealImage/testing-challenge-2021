@@ -38,7 +38,7 @@
         <expectedResponse>[]</expectedResponse>
     </testCase>
     <testCase>
-        <description>share files to user 2</description>
+        <description>user1 share files to user 2</description>
         <url>/sharebox/api/files</url>
         <requestMethod>POST</requestMethod>
         <headers>
@@ -60,11 +60,12 @@
         	</entry>
         	<entry>
         		<key>shareTo</key>
-        		<value>#user2Email</value>
+        		<value>#user2Id</value>
         	</entry>
         </formData>
         <expectedStatusCode>200</expectedStatusCode>
         <expectedResponse>
+        {"message": "Successfully Shared"}
         </expectedResponse>
     </testCase>
     <testCase>

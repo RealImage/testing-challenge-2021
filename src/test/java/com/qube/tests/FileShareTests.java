@@ -17,7 +17,7 @@ public class FileShareTests extends BaseTest
 	private static final String file_share_reject_flow = "/file-share-reject-flow.xml";
 	private static final String file_share_pending_file_flow = "/share-pending-file.xml";
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "File share accept flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + file_share_accept_flow)
 	public void fileShareAcceptFlowTests(RestApiTestCase testCase) 
 	{
@@ -25,7 +25,7 @@ public class FileShareTests extends BaseTest
 		
 	}
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "file share reject flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + file_share_reject_flow)
 	public void fileShareRejectFlowTests(RestApiTestCase testCase) 
 	{
@@ -33,7 +33,7 @@ public class FileShareTests extends BaseTest
 		
 	}
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "share pending file flow", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + file_share_pending_file_flow)
 	public void sharePendingFileTest(RestApiTestCase testCase) 
 	{

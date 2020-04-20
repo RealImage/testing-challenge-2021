@@ -17,14 +17,14 @@ public class BadRequestsTests extends BaseTest
 			.getLogger(BadRequestsTests.class);
 	private static final String TEST_DATA_FILE_NAME = "/bad-request-scenarios.xml";
 	
-	@Test(description = "", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
+	@Test(description = "Bad request tests", dataProvider = TestsDataProvider.CONVERT_XML_TO_TEST_CASE_METHOD_NAME, dataProviderClass = TestsDataProvider.class)
 	@DataProviderUtil.DataProviderArguments("filePath=" + TEST_DATA_FILE_NAME)
-	public void unauthorisedScenarios(RestApiTestCase testCase) throws Exception 
+	public void badRequestScenarios(RestApiTestCase testCase) throws Exception 
 	{
 		logger.info(testCase.getDescription());
 		logger.info(testCase.getBaseUrl() + testCase.getUrl());
 		
-		updateBaseUrlAndUserToken(testCase);
+		updateTestCaseRequest(testCase);
 		
 		Response response = restApiTestCaseClient.call(testCase);
 		String stringResponse = response.asString();

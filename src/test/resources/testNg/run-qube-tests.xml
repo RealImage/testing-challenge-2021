@@ -5,12 +5,12 @@
     </listeners>
 
     <parameter name="testEnv" value="PROD"/>
-	<test name="File Upload Flow">
+ 	<test name="File Upload Flow">
         <classes>
               <class name="com.qube.tests.UploadFlowTests"/>
         </classes>
     </test>
-   <!--  <test name="Unauthorised Error tests">
+	<test name="Unauthorised Error tests">
         <classes>
               <class name="com.qube.tests.UnAuthorisedErrorTests"/>
         </classes>
@@ -29,5 +29,5 @@
         <classes>
               <class name="com.qube.tests.BadRequestsTests"/>
         </classes>
-    </test> -->
+    </test>
 </suite>
