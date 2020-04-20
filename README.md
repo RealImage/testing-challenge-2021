@@ -30,70 +30,70 @@ Test reports can be found under test-output folder
 
 ####File upload Completion flow:
 
-User uploads a file
-Get file details of uploaded file
-User updates a file for bytesCompleted
-Get file details after updating
-Delete the file
+- User uploads a file
+- Get file details of uploaded file
+- User updates a file for bytesCompleted
+- Get file details after updating
+- Delete the file
 
 This flow runs for a .txt file and .jpg file. Can be extended to other file formats.
 
 ####File share tests
 
 Accept flow:
-User 1 uploads a file
-User 1 updates the file for bytesCompleted
-User 1 shares the file to user 2
-User 2 accepts the shared file
-User 2 gets file with sharedFiles true
-User 2 gets file with sharedFiles false
+- User 1 uploads a file
+- User 1 updates the file for bytesCompleted
+- User 1 shares the file to user 2
+- User 2 accepts the shared file
+- User 2 gets file with sharedFiles true
+- User 2 gets file with sharedFiles false
 
 Reject flow:
-User 1 uploads a file
-User 1 updates the file for bytesCompleted
-User 1 shares the file to user 2
-User 2 rejects the shared file
-User 2 gets file with sharedFiles true
-User 2 gets file with sharedFiles false
+- User 1 uploads a file
+- User 1 updates the file for bytesCompleted
+- User 1 shares the file to user 2
+- User 2 rejects the shared file
+- User 2 gets file with sharedFiles true
+- User 2 gets file with sharedFiles false
 
 Pending file flow:
-User 1 uploads a file
-User 1 shares a file (when it is in pending status)
+- User 1 uploads a file
+- User 1 shares a file (when it is in pending status)
 
 ####Delete File Flows
 
 File owner deletes after sharing:
-User 1 uploads a file
-User 1 updates the file bytes Completed
-User 1 shares the file to user 2
-User 2 accepts the file
-User 1 deletes the file
-User 2 gets file with sharedFiles true
+- User 1 uploads a file
+- User 1 updates the file bytes Completed
+- User 1 shares the file to user 2
+- User 2 accepts the file
+- User 1 deletes the file
+- User 2 gets file with sharedFiles true
 
 Shared user attempts to delete the file:
-User 1 uploads a file
-User 1 updates the file bytes Completed
-User 1 shares the file to user 2
-User 2 accepts the file
-User 2 attempts to delete the file
-User 2 gets file with sharedFiles true
+- User 1 uploads a file
+- User 1 updates the file bytes Completed
+- User 1 shares the file to user 2
+- User 2 accepts the file
+- User 2 attempts to delete the file
+- User 2 gets file with sharedFiles true
 
 Attempting to delete another user’s file:
-User 1 uploads a file
-User 1 updates the file bytes Completed
-User 2 attempts to delete user 1 file
+- User 1 uploads a file
+- User 1 updates the file bytes Completed
+- User 2 attempts to delete user 1 file
 
 Deleting a pending file:
-User 1 uploads a file
-User 1 deletes the file in pending status
+- User 1 uploads a file
+- User 1 deletes the file in pending status
 
 ####Error scenarios
 
 Unauthorised scenarios:
-Sending every request with invalid tokens
+- Sending every request with invalid tokens
 
 Bad request scenarios:
-Sending requests with missing required params
+- Sending requests with missing required params
 
 
 =======================================================================================
