@@ -28,7 +28,7 @@ Test reports can be found under test-output folder
 
 # TestFlows
 
-####File upload Completion flow:
+#### File upload Completion flow:
 
 - User uploads a file
 - Get file details of uploaded file
@@ -38,7 +38,7 @@ Test reports can be found under test-output folder
 
 This flow runs for a .txt file and .jpg file. Can be extended to other file formats.
 
-####File share tests
+#### File share tests
 
 Accept flow:
 - User 1 uploads a file
@@ -60,7 +60,7 @@ Pending file flow:
 - User 1 uploads a file
 - User 1 shares a file (when it is in pending status)
 
-####Delete File Flows
+#### Delete File Flows
 
 File owner deletes after sharing:
 - User 1 uploads a file
@@ -87,7 +87,7 @@ Deleting a pending file:
 - User 1 uploads a file
 - User 1 deletes the file in pending status
 
-####Error scenarios
+#### Error scenarios
 
 Unauthorised scenarios:
 - Sending every request with invalid tokens
