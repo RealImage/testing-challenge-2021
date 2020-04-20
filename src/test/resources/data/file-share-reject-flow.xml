@@ -134,8 +134,36 @@
                 <key>token</key>
                 <value>#user2Token</value>
             </entry>
+            <entry>
+            	<key>getSharedFiles</key>
+            	<value>true</value>
+            </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
         <expectedResponse>[]</expectedResponse>
+    </testCase>
+    <testCase>
+        <description>get files for user 2 after rejecting with getSharedFiles false</description>
+        <url>/sharebox/api/files</url>
+        <requestMethod>GET</requestMethod>
+        <headers>
+	        <entry>
+	            <key>Accept</key>
+	            <value>application/json</value>
+	        </entry>
+    	</headers>
+        <parameters>
+            <entry>
+                <key>token</key>
+                <value>#user2Token</value>
+            </entry>
+            <entry>
+            	<key>getSharedFiles</key>
+            	<value>false</value>
+            </entry>
+        </parameters>
+        <expectedStatusCode>200</expectedStatusCode>
+        <expectedResponse>
+        </expectedResponse>
     </testCase>
 </testCases>

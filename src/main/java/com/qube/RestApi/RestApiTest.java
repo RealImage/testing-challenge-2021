@@ -12,6 +12,7 @@ import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.skyscreamer.jsonassert.JSONCompareResult;
 import org.json.JSONArray;
 import org.skyscreamer.jsonassert.JSONParser;
+import org.testng.Assert;
 
 /**
  * This class provides support for assert comparison of json and
@@ -29,32 +30,50 @@ public class RestApiTest
 		JSONCompareResult result;
 		try 
 		{
-			if(actualResponse.startsWith("["))
+			if(actualResponse.equals("[]"))
 			{
-				JSONArray expectedResponse = (JSONArray) JSONParser
-						.parseJSON(restApiTestCase.getExpectedResponse());
-				JSONArray actualResponseJson = (JSONArray) JSONParser
-						.parseJSON(actualResponse);
-				result = JSONCompare.compareJSON(
-						expectedResponse, actualResponseJson, jsonCompareMode);
+				 Assert.assertTrue(restApiTestCase.getExpectedResponse().trim().
+						 			equals(actualResponse),
+						 			"JSON Array Response didn't match. "
+											+ LINE_BREAK
+											+ String.format("Description: %s",
+													restApiTestCase.getDescription())
+											+ LINE_BREAK
+											+ LINE_BREAK
+											+ buildExpectedResponseMessage(restApiTestCase)
+											+ LINE_BREAK
+											+ buildActualResponseMessageInJson(
+													actualResponseStatusCode, actualResponse));
 			}
-			else	
-			 result = JSONCompare.compareJSON(
-					restApiTestCase.getExpectedResponse(), actualResponse,
-					jsonCompareMode);
-			assertThat(
-					"JSON Response didn't match. "
-							+ result.getMessage()
-							+ LINE_BREAK
-							+ String.format("Description: %s",
-									restApiTestCase.getDescription())
-							+ LINE_BREAK
-							+ LINE_BREAK
-							+ buildExpectedResponseMessage(restApiTestCase)
-							+ LINE_BREAK
-							+ buildActualResponseMessageInJson(
-									actualResponseStatusCode, actualResponse),
-					result.failed(), is(false));
+			else 
+			{
+				if(actualResponse.startsWith("["))
+				{
+					JSONArray expectedResponse = (JSONArray) JSONParser
+							.parseJSON(restApiTestCase.getExpectedResponse());
+					JSONArray actualResponseJson = (JSONArray) JSONParser
+							.parseJSON(actualResponse);
+					result = JSONCompare.compareJSON(
+							expectedResponse, actualResponseJson, jsonCompareMode);
+				}
+				else	
+				 result = JSONCompare.compareJSON(
+						restApiTestCase.getExpectedResponse(), actualResponse,
+						jsonCompareMode);
+				
+				assertThat("JSON Response didn't match. "
+								+ result.getMessage()
+								+ LINE_BREAK
+								+ String.format("Description: %s",
+										restApiTestCase.getDescription())
+								+ LINE_BREAK
+								+ LINE_BREAK
+								+ buildExpectedResponseMessage(restApiTestCase)
+								+ LINE_BREAK
+								+ buildActualResponseMessageInJson(
+										actualResponseStatusCode, actualResponse),
+						result.failed(), is(false));
+			}
 		}
 		catch (JSONException e) 
 		{

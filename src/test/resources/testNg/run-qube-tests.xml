@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Qube Test" parallel="tests" verbose="1" generateTestResultAttributes="true">
+<suite name="Qube Test" parallel="false" verbose="1" generateTestResultAttributes="true">
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     </listeners>
@@ -10,7 +10,7 @@
               <class name="com.qube.tests.UploadFlowTests"/>
         </classes>
     </test>
-    <test name="Unauthorised Error tests">
+   <!--  <test name="Unauthorised Error tests">
         <classes>
               <class name="com.qube.tests.UnAuthorisedErrorTests"/>
         </classes>
@@ -29,5 +29,5 @@
         <classes>
               <class name="com.qube.tests.BadRequestsTests"/>
         </classes>
-    </test>
+    </test> -->
 </suite>

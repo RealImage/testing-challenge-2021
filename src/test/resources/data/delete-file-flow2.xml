@@ -166,6 +166,10 @@
                 <key>token</key>
                 <value>#user1Token</value>
             </entry>
+            <entry>
+                <key>getSharedFiles</key>
+                <value>true</value>
+            </entry>
         </parameters>
         <expectedStatusCode>200</expectedStatusCode>
         <expectedResponse>
