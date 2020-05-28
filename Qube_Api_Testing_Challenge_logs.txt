@@ -1,0 +1,71 @@
+Test : UploadFile : Post 
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated 200 status code for Upload file - POST
+Pass : Validated 400 status code for Upload file - POST
+Pass : Validated 401 status code for Upload file - POST
+Pass : Validated 404 status code for Upload file - POST
+
+
+Test : UploadFile : Put
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated 200 status code and message for Upload file - PUT
+Pass : Validated 400 status code for Upload file - PUT
+Pass : Validated 401 status code for Upload file - PUT
+Pass : Validated 404 status code for Upload file - PUT
+Pass : Validated 500 status code for Upload file - PUT
+
+
+Test : UploadFile : Get
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?fileId=ec74b8bd-727b-4254-80cf-06f47ea85fe7&token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated 200 status message and status code for Upload file - GET
+Pass : Validated 401 status code for Upload file - GET
+Pass : Validated 404 status code for Upload file - GET
+Pass : Validated 500 status code for Upload file - GET
+
+
+Test : SharedFiles : Post
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated 200 status code and message for Share file - POST
+Pass : Validated 400 status code for Share file - POST
+Pass : Validated 401 status code for Share file - POST
+Pass : Validated 404 status code for Share file - POST
+
+
+Test : SharedFiles : Get
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated file shared with another user
+Pass : Validated 200 status code and file for Shared Files - GET
+Pass : Validated 401 status code for Shared Files - GET
+Pass : Validated 404 status code for Shared Files - GET
+
+
+Test : ShareFile : Put
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=54e28dd9-d081-45c3-bf75-cb1e0f71714d
+Pass : Validated File Accepted message for Share file - PUT
+Pass : Validated 200 status code and message for Share file - PUT
+Pass : Validated 400 status code for Share file - PUT
+Pass : Validated 401 status code for Share file - PUT
+Pass : Validated 404 status code for Share file - PUT
+Pass : Validated 500 status code for Share file - PUT
+
+
+Test : SharedFiles : Get
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=54e28dd9-d081-45c3-bf75-cb1e0f71714d
+Pass : Validated file shared with another user
+Pass : Validated 200 status code and file for Shared Files - GET
+Pass : Validated 401 status code for Shared Files - GET
+Pass : Validated 404 status code for Shared Files - GET
+
+
+Test : Files : Delete
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=c6a282cb-888d-4284-b833-70490d420d08
+Pass : Validated 200 status code and message for Files - DELETE
+Pass : Validated 401 status code for Files - DELETE
+Pass : Validated 404 status code for Files - DELETE
+
+
+Test : Files : Delete
+API URI : https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=54e28dd9-d081-45c3-bf75-cb1e0f71714d
+Pass : Validated 200 status code and message for Files - DELETE
+Pass : Validated 401 status code for Files - DELETE
+Pass : Validated 404 status code for Files - DELETE
