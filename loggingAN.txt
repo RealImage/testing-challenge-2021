@@ -1,0 +1,120 @@
+Request method:	POST
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=b00a65f1-3177-4fac-af9a-3446803e5157
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=b00a65f1-3177-4fac-af9a-3446803e5157
+Form params:	name=AS7018
+				size=606
+				hash=ha1806
+Path params:	<none>
+Headers:		accept=application/json
+				Content-Type=multipart/form-data
+Cookies:		<none>
+Multiparts:		------------
+				Content-Disposition: form-data; name = file; filename = Tulips.jpg
+				Content-Type: application/octet-stream
+
+				F:\EclipseIde_workSpace-1\ShareBoxAPI\Tulips.jpg
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 20 Jun 2020 12:37:43 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=122.178.236.5-1677f69b-c674-424d-8945-2f34644d8274; httponly; Path=/
+Expires: Sat, 20 Jun 2020 12:37:43 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"secretKey": "qb18Xa0ch8UeS1FlrUDpA4b1YiyLVw+6zruEHC3f", "accessKey": "ASIAYVIZ45EGBOA32SHR", "sessionToken": "FwoGZXIvYXdzELb//////////wEaDO7OIB0dUDdD3vz63yLSARnxvmGiqlRgVYKIWS57QWf2fnltZBoDhnn3cEmEscZr6Orw8/3nzHkwVNdYFB42Zlu1T62+fB2F5m1bVgaIAzyFD5cjNpzhL9XRtcMl+j6YkbCkOU0A3K60ItK3UC2qQ8OSDib0+DDTydq8djzQkYbH+t5VSVFlyJw5e72idGqrmWuZ9a/KhPKs9hKSjVyWfIbGpMK/DNG2YLGmXu6qpBu6yGa4AsMrO6ponrsht+uIhMbKv6KP1QfvE+lllgrN1yWDCavba8R2I0l8gHCjeRuFXCiSh7j3BTIpCGATkcXduXKKH5wQoUNOHmznqodC/ZspACFccBeF+H8j1tEFreaLV1Q=", "fileId": "52efe636-7a76-4d81-bf2c-73c5408045d5"}</body>
+</html>
+Request method:	GET
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=b00a65f1-3177-4fac-af9a-3446803e5157&fileId=52efe636-7a76-4d81-bf2c-73c5408045d5
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=b00a65f1-3177-4fac-af9a-3446803e5157
+				fileId=52efe636-7a76-4d81-bf2c-73c5408045d5
+Form params:	<none>
+Path params:	<none>
+Headers:		accept=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 20 Jun 2020 12:37:45 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=122.178.236.5-daa6a5f0-3177-400d-a3a3-3bf3c56d75f0; httponly; Path=/
+Expires: Sat, 20 Jun 2020 12:37:45 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"status": "Pending", "name": "AS7018", "fileHash": "ha1806", "createdOn": "2020-06-20 12:37:40", "bytesCompleted": 0, "size": 606, "fileId": "52efe636-7a76-4d81-bf2c-73c5408045d5"}</body>
+</html>
+Request method:	PUT
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/upload?token=b00a65f1-3177-4fac-af9a-3446803e5157
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=b00a65f1-3177-4fac-af9a-3446803e5157
+Form params:	fileId=52efe636-7a76-4d81-bf2c-73c5408045d5
+				bytesCompleted=606
+Path params:	<none>
+Headers:		accept=application/json
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 20 Jun 2020 12:37:46 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=122.178.236.5-8b5ec3a1-4a3c-4092-90c0-433f51681147; httponly; Path=/
+Expires: Sat, 20 Jun 2020 12:37:46 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"message": "Bytes has been updated successfully"}</body>
+</html>
+Request method:	POST
+Request URI:	https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox/api/files?token=b00a65f1-3177-4fac-af9a-3446803e5157
+Proxy:			<none>
+Request params:	<none>
+Query params:	token=b00a65f1-3177-4fac-af9a-3446803e5157
+Form params:	fileId=52efe636-7a76-4d81-bf2c-73c5408045d5
+				shareTo=248
+Path params:	<none>
+Headers:		accept=application/json
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Sat, 20 Jun 2020 12:37:47 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: web2py
+Set-Cookie: session_id_sharebox=122.178.236.5-d026d68a-3991-4c25-ac6e-dfbef0363efb; httponly; Path=/
+Expires: Sat, 20 Jun 2020 12:37:47 GMT
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Encoding: gzip
+
+<html>
+  <body>{"message": "Successfully Shared"}</body>
+</html>
