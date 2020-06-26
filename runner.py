@@ -10,31 +10,40 @@ def main():
     print('=' * 50)
     print('Share Box Automation')
     print('=' * 50)
-    print('1. List all the files')
+    print('1. Detail of uploaded file')
     print('2. Upload file')
-    print('3. Check uploaded file')
-    print('4. Delete file')
-    print('5. Share file to others.')
-    print('6. Approve/Reject file from other user')
+    print('3. Update a file')
+    print('4. List all the files')
+    print('5. Delete file')
+    print('6. Share file to others.')
+    print('7. Approve/Reject file from other user')
     print('=' * 50)
     resp = input('Enter your choice: ')
     if resp == '1':
-        list_files()
+        get_uploadfile_detail()
     elif resp == '2':
         upload_file()
     elif resp == '3':
         check_update()
     elif resp == '4':
-        delete_file()
+        list_files()
     elif resp == '5':
-        share_file()
+        delete_file()
     elif resp == '6':
+        share_file()
+    elif resp == '7':
         resp_share_file()
+		
     else:
         print("Wrong choice selected.")
         print("Exiting!!!")
 
-
+def get_uploadfile_detail():
+    """Hits api and fetches all the files."""
+    file_id = input("Enter a file id: ")
+    resp = upload.get_upload_file_details(file_id)
+    print(resp)
+	
 def list_files():
     """Hits api and fetches all the files."""
     resp = files.get_all_files()

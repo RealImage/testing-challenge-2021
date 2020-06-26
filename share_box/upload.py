@@ -7,7 +7,9 @@ URI = '/api/upload'
 def get_upload_file_details(file_id):
     """get details of Uploaded file to ShareBox."""
     params = {'fileId': file_id}
-    resp = common.hit_url(URI, params)
+	
+    #resp = common.hit_url(URI, json.dumps(params).encode())
+    resp = common.hit_url(URI+'?fileId='+file_id , json.dumps(params).encode())
     if resp:
         resp_data, resp_code = resp
         if resp_code == 200:

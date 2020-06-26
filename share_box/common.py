@@ -5,7 +5,7 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 URL = 'https://ec2-35-154-146-139.ap-south-1.compute.amazonaws.com/sharebox'
-AUTH_KEY = '8bcb0464-2bb9-4f6f-a478-076f02512888'
+AUTH_KEY = '3b1d38df-9d14-40ff-84be-be6ce9a153cd'
 
 
 def hit_url(uri, data=None, headers=None, method_type='GET'):
@@ -21,10 +21,14 @@ def hit_url(uri, data=None, headers=None, method_type='GET'):
     str: response from the url.
     """
     try:
-        url = f'{URL + uri}?token={AUTH_KEY}'
+        #url = f'{URL + uri}?token={AUTH_KEY}'
+        if method_type == 'GET':
+            url=URL+uri+'&token='+AUTH_KEY
+        else:
+            url=URL+uri+'?token='+AUTH_KEY
         data = {} if not data else data
         headers = {} if not headers else headers
-        req = request.Request(url, data, headers, method=method_type)
+        req = request.Request(url, data, headers=headers, method=method_type)
         resp = request.urlopen(req)
         resp_data = resp.read()
         resp_code = resp.getcode()

@@ -8,9 +8,13 @@ def get_all_files(get_shared_files=False):
     """Hit the sharebox url and fetch all the files linked with auth token."""
     params = {}
     if get_shared_files:
-        params['getSharedFiles'] = True
+        params['getSharedFiles'] = 'True'
 
-    resp = common.hit_url(URI, params)
+    if get_shared_files == False:
+        get_shared_files=''
+    resp = common.hit_url(URI+'?getSharedFiles='+str(get_shared_files), json.dumps(params).encode())
+
+    #resp = common.hit_url(URI, json.dumps(params).encode())
     if resp:
         resp_data, resp_code = resp
         if resp_code == 200:
