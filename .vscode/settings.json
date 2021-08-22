@@ -1,0 +1,9 @@
+{
+    "extensions.supportVirtualWorkspaces": {
+
+        "pub.name": true
+    },
+    "files.associations": {
+        "python.pythonPath": "./venv/bin/python"
+    }
+}
