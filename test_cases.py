@@ -6,7 +6,7 @@ from pprint import pprint
 
 # Get the list of files in your account
 # url to be changed
-BASE_URL = "https://private-anon-facf5731d1-qubesharebox.apiary-mock.com/sharebox/api/"
+BASE_URL = "https://ec2-15-206-185-35.ap-south-1.compute.amazonaws.com/sharebox/api/"
 GET_FILES_ENDPOINT = "files?token="
 UPLOAD_FILES_ENDPOINT = "upload?token="
 MULTIPART_FORM_DATA = 'multipart/form-data; boundary=BOUNDARY'
